@@ -771,7 +771,7 @@ const Services = () => {
   ];
   
   const downloadQuotation = () => {
-    const pdfUrl = '/Quation Sagus solution.pdf';
+    const pdfUrl = '/sagus solution quation pdf 2.pdf';
     const link = document.createElement('a');
     link.href = pdfUrl;
     link.download = 'DigitalAptech-Quotation.pdf';
@@ -817,10 +817,10 @@ const Services = () => {
      
       <section className="relative py-16 md:py-20 lg:py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 overflow-hidden">
         {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
+        {/* <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 right-10 w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-green-200 to-green-300 rounded-full opacity-20 animate-pulse delay-1000"></div>
           <div className="absolute bottom-20 left-1/4 w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-blue-200 to-blue-300 rounded-full opacity-20 animate-pulse delay-2000"></div>
-        </div>
+        </div> */}
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-20">
           {/* Hero Content */}
