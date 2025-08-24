@@ -1728,240 +1728,253 @@ const OurWork = () => {
   const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
     if (!project) return null;
 
-    return (
-      <div className="fixed inset-0 bg-black/80 backdrop-blur-lg z-50 flex items-center justify-center p-4">
-        <div className="bg-white rounded-xl md:rounded-2xl max-w-4xl md:max-w-6xl w-full max-h-[95vh] overflow-y-auto relative">
-          {/* Close Button */}
-          <button
-            onClick={onClose}
-            className="absolute top-2 right-2 md:top-4 md:right-4 z-50 w-8 h-8 md:w-10 md:h-10 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors duration-300"
-          >
-            <X className="w-4 h-4 md:w-6 md:h-6 text-slate-700" />
-          </button>
+  return (
+  <div className="fixed inset-0 bg-black/30 backdrop-blur-md z-50 flex items-center justify-center p-2 sm:p-4">
+    <div className="bg-white rounded-lg md:rounded-xl max-w-full w-full max-h-[98vh] overflow-y-auto relative shadow-2xl" style={{ maxWidth: '1200px' }}>
+      {/* Close Button */}
+      <button
+        onClick={onClose}
+        className="absolute top-2 right-2 md:top-3 md:right-3 z-50 w-7 h-7 md:w-8 md:h-8 bg-white/80 rounded-full flex items-center justify-center shadow-md hover:bg-white transition-colors duration-200"
+        aria-label="Close modal"
+      >
+        <X className="w-3 h-3 md:w-4 md:h-4 text-slate-600" />
+      </button>
 
-          {/* Navigation Arrows */}
-          <button
-            onClick={onPrev}
-            className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 z-40 w-8 h-8 md:w-12 md:h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-colors duration-300"
-          >
-            <ChevronLeft className="w-4 h-4 md:w-6 md:h-6 text-slate-700" />
-          </button>
-          <button
-            onClick={onNext}
-            className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 z-40 w-8 h-8 md:w-12 md:h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-colors duration-300"
-          >
-            <ChevronRight className="w-4 h-4 md:w-6 md:h-6 text-slate-700" />
-          </button>
+      {/* Navigation Arrows - Only show on larger screens or if touch device */}
+      <button
+        onClick={onPrev}
+        className="hidden sm:flex absolute left-2 md:left-3 top-1/2 transform -translate-y-1/2 z-40 w-8 h-8 md:w-10 md:h-10 bg-white/80 rounded-full shadow-md items-center justify-center hover:bg-white transition-colors duration-200"
+        aria-label="Previous project"
+      >
+        <ChevronLeft className="w-4 h-4 md:w-5 md:h-5 text-slate-600" />
+      </button>
+      <button
+        onClick={onNext}
+        className="hidden sm:flex absolute right-2 md:right-3 top-1/2 transform -translate-y-1/2 z-40 w-8 h-8 md:w-10 md:h-10 bg-white/80 rounded-full shadow-md items-center justify-center hover:bg-white transition-colors duration-200"
+        aria-label="Next project"
+      >
+        <ChevronRight className="w-4 h-4 md:w-5 md:h-5 text-slate-600" />
+      </button>
 
-          {/* Project Header */}
-          <div className="relative h-48 md:h-64 lg:h-80 overflow-hidden">
-            <img
-              src={project.coverImage}
-              alt={project.title}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-            <div className="absolute bottom-4 md:bottom-6 left-4 md:left-6 text-white">
-              <div className="flex items-center mb-2 md:mb-4">
-                <div className="w-10 h-10 md:w-16 md:h-16 bg-white/20 backdrop-blur-sm rounded-lg md:rounded-xl flex items-center justify-center text-xl md:text-3xl mr-2 md:mr-4">
-                  {project.logo}
-                </div>
-                <div>
-                  <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-1 md:mb-2">{project.title}</h2>
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="px-2 py-1 md:px-3 md:py-1 bg-teal-500/90 text-white text-xs md:text-sm rounded-full">
-                      {categories.find(cat => cat.id === project.category)?.name}
-                    </span>
-                    <span className="flex items-center text-xs md:text-sm">
-                      <Calendar className="w-3 h-3 md:w-4 md:h-4 mr-1" />
-                      {project.stats.launchDate || "2023"}
-                    </span>
-                  </div>
-                </div>
+      {/* Project Header */}
+      <div className="relative h-40 sm:h-48 md:h-56 lg:h-64 overflow-hidden">
+        <img
+          src={project.coverImage}
+          alt={project.title}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+        <div className="absolute bottom-3 left-3 md:bottom-4 md:left-4 text-white">
+          <div className="flex items-center mb-1 md:mb-2">
+            <div className="w-8 h-8 md:w-10 md:h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center text-lg md:text-xl mr-2 md:mr-3">
+              {project.logo}
+            </div>
+            <div>
+              <h2 className="text-lg md:text-xl lg:text-2xl font-bold mb-0.5 md:mb-1">{project.title}</h2>
+              <div className="flex flex-wrap items-center gap-1 md:gap-2">
+                <span className="px-2 py-0.5 md:px-2.5 md:py-1 bg-teal-500/90 text-white text-xs rounded-full">
+                  {categories.find(cat => cat.id === project.category)?.name}
+                </span>
+                <span className="flex items-center text-xs">
+                  <Calendar className="w-3 h-3 md:w-3.5 md:h-3.5 mr-1" />
+                  {project.stats.launchDate || "2023"}
+                </span>
               </div>
             </div>
-          </div>
-
-          {/* Tabs */}
-          <div className="border-b border-slate-200 overflow-x-auto">
-            <div className="flex space-x-4 md:space-x-8 px-4 md:px-8 min-w-max">
-              {['overview', 'features', 'technology', 'results', 'gallery'].map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`py-3 md:py-4 px-1 font-medium text-xs md:text-sm border-b-2 transition-colors duration-300 whitespace-nowrap ${
-                    activeTab === tab
-                      ? 'border-teal-500 text-teal-600'
-                      : 'border-transparent text-slate-500 hover:text-slate-700'
-                  }`}
-                >
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Tab Content */}
-          <div className="p-4 md:p-6 lg:p-8">
-            {activeTab === 'overview' && (
-              <div className="grid md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
-                <div>
-                  <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">Project Overview</h3>
-                  <p className="text-slate-600 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">{project.fullDescription}</p>
-                  
-                  <div className="grid grid-cols-2 gap-2 md:gap-4 mb-4 md:mb-6">
-                    <div className="bg-slate-50 rounded-lg p-3 md:p-4">
-                      <div className="text-xs md:text-sm text-slate-500 mb-1">Duration</div>
-                      <div className="font-semibold text-sm md:text-base">{project.stats.duration}</div>
-                    </div>
-                    <div className="bg-slate-50 rounded-lg p-3 md:p-4">
-                      <div className="text-xs md:text-sm text-slate-500 mb-1">Team Size</div>
-                      <div className="font-semibold text-sm md:text-base">{project.stats.team}</div>
-                    </div>
-                    <div className="bg-slate-50 rounded-lg p-3 md:p-4">
-                      <div className="text-xs md:text-sm text-slate-500 mb-1">Budget</div>
-                      <div className="font-semibold text-sm md:text-base">{project.stats.budget}</div>
-                    </div>
-                    <div className="bg-slate-50 rounded-lg p-3 md:p-4">
-                      <div className="text-xs md:text-sm text-slate-500 mb-1">Users</div>
-                      <div className="font-semibold text-sm md:text-base">{project.stats.clients}</div>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-wrap gap-2 md:gap-4">
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-teal-500 to-green-500 text-white rounded-lg hover:from-teal-600 hover:to-green-600 transition-all duration-300 text-xs md:text-sm"
-                    >
-                      <ExternalLink className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" />
-                      Live Demo
-                    </a>
-                    {project.caseStudyUrl && (
-                      <a
-                        href={project.caseStudyUrl}
-                        className="flex items-center px-4 py-2 md:px-6 md:py-3 border border-slate-300 text-slate-700 rounded-lg hover:border-teal-400 hover:text-teal-600 transition-all duration-300 text-xs md:text-sm"
-                      >
-                        <FileText className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" />
-                        Full Case Study
-                      </a>
-                    )}
-                  </div>
-                </div>
-                <div>
-                  <h4 className="text-lg md:text-xl font-semibold mb-3 md:mb-4">Key Achievements</h4>
-                  <div className="space-y-2 md:space-y-3">
-                    {project.results.map((result, index) => (
-                      <div key={index} className="flex items-center p-3 md:p-4 bg-slate-50 rounded-lg">
-                        <div className="w-10 h-10 md:w-12 md:h-12 bg-teal-100 rounded-lg flex items-center justify-center text-teal-600 font-bold text-base md:text-lg mr-3 md:mr-4">
-                          {result.metric}
-                        </div>
-                        <div className="text-xs md:text-sm text-slate-600">{result.description}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {activeTab === 'features' && (
-              <div>
-                <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">Key Features</h3>
-                <div className="grid md:grid-cols-2 gap-3 md:gap-4 lg:gap-6">
-                  {project.features.map((feature, index) => (
-                    <div key={index} className="flex items-start p-3 md:p-4 bg-slate-50 rounded-lg">
-                      <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-teal-500 mr-2 md:mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-slate-700 text-sm md:text-base">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {activeTab === 'technology' && (
-              <div>
-                <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">Technology Stack</h3>
-                <div className="grid md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
-                  <div>
-                    <h4 className="text-base md:text-lg font-semibold mb-3 md:mb-4">Frontend</h4>
-                    <div className="flex flex-wrap gap-1 md:gap-2">
-                      {project.technologies.slice(0, 4).map((tech) => (
-                        <span key={tech} className="px-2 py-1 md:px-3 md:py-2 bg-teal-100 text-teal-700 rounded-lg text-xs md:text-sm">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="text-base md:text-lg font-semibold mb-3 md:mb-4">Backend & Infrastructure</h4>
-                    <div className="flex flex-wrap gap-1 md:gap-2">
-                      {project.technologies.slice(4).map((tech) => (
-                        <span key={tech} className="px-2 py-1 md:px-3 md:py-2 bg-green-100 text-green-700 rounded-lg text-xs md:text-sm">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {activeTab === 'results' && (
-              <div className="grid md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
-                <div>
-                  <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">Project Results</h3>
-                  <div className="space-y-3 md:space-y-4 lg:space-y-6">
-                    {project.results.map((result, index) => (
-                      <div key={index} className="p-4 md:p-6 bg-gradient-to-r from-teal-50 to-green-50 rounded-xl">
-                        <div className="text-2xl md:text-3xl font-bold text-teal-600 mb-1 md:mb-2">{result.metric}</div>
-                        <div className="text-slate-600 text-sm md:text-base">{result.description}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <h4 className="text-base md:text-lg font-semibold mb-3 md:mb-4 lg:mb-6">Client Testimonial</h4>
-                  {project.testimonials.map((testimonial, index) => (
-                    <div key={index} className="bg-white border border-slate-200 rounded-xl p-4 md:p-6">
-                      <div className="flex items-center mb-3 md:mb-4">
-                        <img
-                          src={testimonial.avatar}
-                          alt={testimonial.author}
-                          className="w-10 h-10 md:w-12 md:h-12 rounded-full mr-3 md:mr-4"
-                        />
-                        <div>
-                          <div className="font-semibold text-sm md:text-base">{testimonial.author}</div>
-                          <div className="text-xs md:text-sm text-slate-500">{testimonial.role}</div>
-                        </div>
-                      </div>
-                      <p className="text-slate-600 italic text-sm md:text-base">"{testimonial.text}"</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {activeTab === 'gallery' && (
-              <div>
-                <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">Project Gallery</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 lg:gap-6">
-                  {project.gallery.map((image, index) => (
-                    <div key={index} className="rounded-xl overflow-hidden shadow-lg">
-                      <img
-                        src={image}
-                        alt={`${project.title} screenshot ${index + 1}`}
-                        className="w-full h-40 md:h-48 object-cover hover:scale-105 transition-transform duration-700"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </div>
-    );
+
+      {/* Tabs - Scrollable on mobile */}
+      <div className="border-b border-slate-200 overflow-x-auto hide-scrollbar">
+        <div className="flex space-x-4 md:space-x-6 px-4 min-w-max">
+          {['overview', 'features', 'technology', 'results', 'gallery'].map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`py-3 md:py-3.5 px-1 font-medium text-xs md:text-sm border-b-2 transition-colors duration-200 whitespace-nowrap ${
+                activeTab === tab
+                  ? 'border-teal-500 text-teal-600'
+                  : 'border-transparent text-slate-500 hover:text-slate-700'
+              }`}
+            >
+              {tab.charAt(0).toUpperCase() + tab.slice(1)}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Tab Content */}
+      <div className="p-4 md:p-5 lg:p-6">
+        {activeTab === 'overview' && (
+          <div className="grid md:grid-cols-2 gap-4 md:gap-5">
+            <div>
+              <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">Project Overview</h3>
+              <p className="text-slate-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">{project.fullDescription}</p>
+              
+              <div className="grid grid-cols-2 gap-2 md:gap-3 mb-3 md:mb-4">
+                <div className="bg-slate-50 rounded-lg p-2 md:p-3">
+                  <div className="text-xs text-slate-500 mb-1">Duration</div>
+                  <div className="font-semibold text-sm">{project.stats.duration}</div>
+                </div>
+                <div className="bg-slate-50 rounded-lg p-2 md:p-3">
+                  <div className="text-xs text-slate-500 mb-1">Team Size</div>
+                  <div className="font-semibold text-sm">{project.stats.team}</div>
+                </div>
+                <div className="bg-slate-50 rounded-lg p-2 md:p-3">
+                  <div className="text-xs text-slate-500 mb-1">Budget</div>
+                  <div className="font-semibold text-sm">{project.stats.budget}</div>
+                </div>
+                <div className="bg-slate-50 rounded-lg p-2 md:p-3">
+                  <div className="text-xs text-slate-500 mb-1">Users</div>
+                  <div className="font-semibold text-sm">{project.stats.clients}</div>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-2 md:gap-3">
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center px-3 py-1.5 md:px-4 md:py-2 bg-gradient-to-r from-teal-500 to-green-500 text-white rounded-lg hover:from-teal-600 hover:to-green-600 transition-all duration-200 text-xs md:text-sm"
+                >
+                  <ExternalLink className="w-3 h-3 md:w-3.5 md:h-3.5 mr-1 md:mr-1.5" />
+                  Live Demo
+                </a>
+                {project.caseStudyUrl && (
+                  <a
+                    href={project.caseStudyUrl}
+                    className="flex items-center px-3 py-1.5 md:px-4 md:py-2 border border-slate-300 text-slate-700 rounded-lg hover:border-teal-400 hover:text-teal-600 transition-all duration-200 text-xs md:text-sm"
+                  >
+                    <FileText className="w-3 h-3 md:w-3.5 md:h-3.5 mr-1 md:mr-1.5" />
+                    Full Case Study
+                  </a>
+                )}
+              </div>
+            </div>
+            <div className="mt-4 md:mt-0">
+              <h4 className="text-base md:text-lg font-semibold mb-2 md:mb-3">Key Achievements</h4>
+              <div className="space-y-2 md:space-y-2.5">
+                {project.results.map((result, index) => (
+                  <div key={index} className="flex items-center p-2.5 md:p-3 bg-slate-50 rounded-lg">
+                    <div className="w-8 h-8 md:w-9 md:h-9 bg-teal-100 rounded-lg flex items-center justify-center text-teal-600 font-bold text-sm md:text-base mr-2 md:mr-3">
+                      {result.metric}
+                    </div>
+                    <div className="text-xs md:text-sm text-slate-600">{result.description}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'features' && (
+          <div>
+            <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">Key Features</h3>
+            <div className="grid md:grid-cols-2 gap-2 md:gap-3">
+              {project.features.map((feature, index) => (
+                <div key={index} className="flex items-start p-2.5 md:p-3 bg-slate-50 rounded-lg">
+                  <CheckCircle className="w-3.5 h-3.5 md:w-4 md:h-4 text-teal-500 mr-2 md:mr-2.5 mt-0.5 flex-shrink-0" />
+                  <span className="text-slate-700 text-sm md:text-base">{feature}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'technology' && (
+          <div>
+            <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">Technology Stack</h3>
+            <div className="grid md:grid-cols-2 gap-3 md:gap-4">
+              <div>
+                <h4 className="text-base md:text-lg font-semibold mb-2 md:mb-3">Frontend</h4>
+                <div className="flex flex-wrap gap-1 md:gap-1.5">
+                  {project.technologies.slice(0, 4).map((tech) => (
+                    <span key={tech} className="px-2 py-1 md:px-2.5 md:py-1 bg-teal-100 text-teal-700 rounded-lg text-xs">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="mt-3 md:mt-0">
+                <h4 className="text-base md:text-lg font-semibold mb-2 md:mb-3">Backend & Infrastructure</h4>
+                <div className="flex flex-wrap gap-1 md:gap-1.5">
+                  {project.technologies.slice(4).map((tech) => (
+                    <span key={tech} className="px-2 py-1 md:px-2.5 md:py-1 bg-green-100 text-green-700 rounded-lg text-xs">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'results' && (
+          <div className="grid md:grid-cols-2 gap-3 md:gap-4">
+            <div>
+              <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">Project Results</h3>
+              <div className="space-y-2 md:space-y-3">
+                {project.results.map((result, index) => (
+                  <div key={index} className="p-3 md:p-4 bg-gradient-to-r from-teal-50 to-green-50 rounded-lg">
+                    <div className="text-xl md:text-2xl font-bold text-teal-600 mb-1 md:mb-1.5">{result.metric}</div>
+                    <div className="text-slate-600 text-sm md:text-base">{result.description}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="mt-4 md:mt-0">
+              <h4 className="text-base md:text-lg font-semibold mb-2 md:mb-3">Client Testimonial</h4>
+              {project.testimonials.map((testimonial, index) => (
+                <div key={index} className="bg-white border border-slate-200 rounded-lg p-3 md:p-4">
+                  <div className="flex items-center mb-2 md:mb-3">
+                    <img
+                      src={testimonial.avatar}
+                      alt={testimonial.author}
+                      className="w-8 h-8 md:w-10 md:h-10 rounded-full mr-2 md:mr-3"
+                    />
+                    <div>
+                      <div className="font-semibold text-sm md:text-base">{testimonial.author}</div>
+                      <div className="text-xs text-slate-500">{testimonial.role}</div>
+                    </div>
+                  </div>
+                  <p className="text-slate-600 italic text-sm md:text-base">"{testimonial.text}"</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'gallery' && (
+          <div>
+            <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">Project Gallery</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-3">
+              {project.gallery.map((image, index) => (
+                <div key={index} className="rounded-lg overflow-hidden shadow-md">
+                  <img
+                    src={image}
+                    alt={`${project.title} screenshot ${index + 1}`}
+                    className="w-full h-32 md:h-36 object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+    
+    <style jsx>{`
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+    `}</style>
+  </div>
+);
   };
 
   return (
