@@ -615,7 +615,7 @@ const About = () => {
     },
     {
       name: "Udit Mishra",
-      role: "Content Writer",
+      role: "Content Creator & App Developer",
       image: "/WhatsApp Image 2025-08-23 at 21.32.33_5288d819.jpg",
       expertise: "Full-Stack Development & DevOps",
       bio: "Building robust solutions with modern technologies"
