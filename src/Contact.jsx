@@ -537,6 +537,7 @@ import {
 import Footer from './Footer';
 import Header from './Header';
 import emailjs from '@emailjs/browser';
+import { Helmet } from 'react-helmet';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -693,8 +694,29 @@ const Contact = () => {
   ];
 
   return (
-    <div>
-      <Header />
+    <>
+   
+
+        <Helmet>
+  <title>Sagus Solutions | Contact Us – Get in Touch</title>
+  <meta name="title" content="Sagus Solutions | Contact Us – Get in Touch" />
+  <meta name="description" content="Contact Sagus Solutions to discuss your website, app, AI automation, content, or digital project needs. Let’s grow your business together." />
+  <link rel="canonical" href="https://www.sagussolutions.info/contact" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.sagussolutions.info/contact" />
+  <meta property="og:title" content="Sagus Solutions | Contact Us – Get in Touch" />
+  <meta property="og:description" content="Reach out to Sagus Solutions for web, app, AI, or content solutions. Start your digital project today." />
+  <meta property="og:image" content="https://www.sagussolutions.info/sagus[1].png" />
+  <meta property="og:image:alt" content="Sagus Solutions Logo" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sagus Solutions | Contact Us – Get in Touch" />
+  <meta name="twitter:description" content="Get in touch with Sagus Solutions to discuss websites, apps, AI automation, content creation, or digital solutions for your business." />
+  <meta name="twitter:image" content="https://www.sagussolutions.info/sagus[1].png" />
+</Helmet>
+
+   
+     <div>
+      
       <div className="min-h-screen pt-16 md:pt-20 bg-gradient-to-br from-slate-50 via-slate-100 to-blue-50">
         {/* Header Section */}
         <section className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8" data-animate>
@@ -1026,7 +1048,7 @@ const Contact = () => {
           </div>
         </section>
       </div>
-      <Footer />
+   
       
       <style jsx>{`
         @keyframes fade-in-up {
@@ -1045,6 +1067,8 @@ const Contact = () => {
         }
       `}</style>
     </div>
+    </>
+   
   );
 };
 

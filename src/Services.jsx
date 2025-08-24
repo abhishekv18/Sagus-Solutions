@@ -592,6 +592,7 @@ import {
 import Footer from './Footer';
 import Header from './Header';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const Services = () => {
   const [isVisible, setIsVisible] = useState({});
@@ -812,7 +813,27 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
+    <Helmet>
+    
+  <title>Sagus Solutions | Services – Web, AI, Apps & Digital Solutions</title>
+  <meta name="title" content="Sagus Solutions | Services – Web, AI, Apps & Digital Solutions" />
+  <meta name="description" content="Explore Sagus Solutions’ services including website development, AI automation, app development, content creation, chatbot integration, and digital marketing to elevate your business." />
+  <link rel="canonical" href="https://www.sagussolutions.info/services" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.sagussolutions.info/services" />
+  <meta property="og:title" content="Sagus Solutions | Services – Web, AI, Apps & Digital Solutions" />
+  <meta property="og:description" content="Discover our services: websites, apps, AI automation, content creation, chatbot integration, and digital solutions for your business growth." />
+  <meta property="og:image" content="https://www.sagussolutions.info/sagus[1].png" />
+  <meta property="og:image:alt" content="Sagus Solutions Logo" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sagus Solutions | Services – Web, AI, Apps & Digital Solutions" />
+  <meta name="twitter:description" content="Explore Sagus Solutions’ expert services in web development, AI automation, apps, content creation, chatbot integration, and more." />
+  <meta name="twitter:image" content="https://www.sagussolutions.info/sagus[1].png" />
+</Helmet>
+
+  
+     <div className="min-h-screen bg-white">
       {/* Hero Section */}
      
       <section className="relative py-16 md:py-20 lg:py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 overflow-hidden">
@@ -1119,6 +1140,8 @@ const Services = () => {
         }
       `}</style>
     </div>
+    </>
+   
   );
 };
 

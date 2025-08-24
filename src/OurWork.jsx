@@ -1308,6 +1308,7 @@ import {
 import Header from './Header';
 import Footer from './Footer';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const OurWork = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -1978,8 +1979,28 @@ const OurWork = () => {
   };
 
   return (
-    <div>
-      <Header />
+    <>
+  
+    <Helmet>
+  <title>Sagus Solutions | Our Work – Portfolio of Digital Projects</title>
+  <meta name="title" content="Sagus Solutions | Our Work – Portfolio of Digital Projects" />
+  <meta name="description" content="View Sagus Solutions’ portfolio showcasing websites, apps, AI automation projects, chatbot integrations, and digital campaigns that deliver results for our clients." />
+  <link rel="canonical" href="https://www.sagussolutions.info/our-work" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.sagussolutions.info/our-work" />
+  <meta property="og:title" content="Sagus Solutions | Our Work – Portfolio of Digital Projects" />
+  <meta property="og:description" content="Explore Sagus Solutions’ portfolio of websites, apps, AI automation, and chatbot integration projects created for our clients." />
+  <meta property="og:image" content="https://www.sagussolutions.info/sagus[1].png" />
+  <meta property="og:image:alt" content="Sagus Solutions Logo" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sagus Solutions | Our Work – Portfolio of Digital Projects" />
+  <meta name="twitter:description" content="Check out Sagus Solutions’ portfolio featuring web, app, AI automation, and digital projects for business growth." />
+  <meta name="twitter:image" content="https://www.sagussolutions.info/sagus[1].png" />
+</Helmet>
+
+
+     <div>
+    
       <div className="min-h-screen pt-16 md:pt-20 bg-gradient-to-br from-slate-50 via-slate-100 to-blue-50">
         {/* Header */}
         <section className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8" data-animate>
@@ -2250,6 +2271,8 @@ const OurWork = () => {
         }
       `}</style>
     </div>
+    </>
+   
   );
 };
 

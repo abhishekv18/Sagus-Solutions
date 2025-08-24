@@ -891,7 +891,7 @@ import Header from './Header';
 import Footer from './Footer';
 import HomeProjects from './HomeProjects';
 import { Link } from 'react-router-dom';
-
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -1068,7 +1068,27 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 overflow-hidden">
+    <>
+   
+<Helmet>
+  <title>Sagus Solutions | Innovative Digital Solutions for Your Business</title>
+  <meta name="title" content="Sagus Solutions | Innovative Digital Solutions for Your Business" />
+  <meta name="description" content="Sagus Solutions is a full-service digital agency offering website development, AI automation, content creation, app development, and chatbot integration to help your business grow." />
+  <meta name="keywords" content="Sagus Solutions, Website Development, AI Automation, App Development, Chatbot Integration, Digital Marketing, Content Creation, Business Solutions" />
+  <link rel="canonical" href="https://www.sagussolutions.info/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.sagussolutions.info/" />
+  <meta property="og:title" content="Sagus Solutions | Innovative Digital Solutions for Your Business" />
+  <meta property="og:description" content="Sagus Solutions provides cutting-edge digital solutions including websites, apps, AI automation, content creation, and chatbot integration to grow your business." />
+  <meta property="og:image" content="https://www.sagussolutions.info/sagus[1].png" />
+  <meta property="og:image:alt" content="Sagus Solutions Logo" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sagus Solutions | Innovative Digital Solutions for Your Business" />
+  <meta name="twitter:description" content="Grow your business with Sagus Solutions – expert website development, AI automation, app development, content creation, and chatbot integration." />
+  <meta name="twitter:image" content="https://www.sagussolutions.info/sagus[1].png" />
+</Helmet>
+
+     <div className="min-h-screen bg-slate-50 text-slate-900 overflow-hidden">
      
       
       {/* Mouse follower effect */}
@@ -1665,6 +1685,8 @@ const Home = () => {
      
     
     </div>
+    </>
+   
   );
 };
 

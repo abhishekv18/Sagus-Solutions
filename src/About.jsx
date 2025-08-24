@@ -512,6 +512,7 @@ import {
 import Header from './Header';
 import Footer from './Footer';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -707,6 +708,24 @@ const About = () => {
   ];
 
   return (
+    <>
+    <Helmet>
+  <title>Sagus Solutions | About Us – Innovative Digital Agency</title>
+  <meta name="title" content="Sagus Solutions | About Us – Innovative Digital Agency" />
+  <meta name="description" content="Learn about Sagus Solutions, a creative digital agency providing web development, AI automation, app development, content creation, and chatbot integration to help businesses thrive." />
+  <link rel="canonical" href="https://www.sagussolutions.info/about" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.sagussolutions.info/about" />
+  <meta property="og:title" content="Sagus Solutions | About Us – Innovative Digital Agency" />
+  <meta property="og:description" content="Discover Sagus Solutions – a digital agency delivering web, app, AI, and content solutions to help businesses succeed online." />
+  <meta property="og:image" content="https://www.sagussolutions.info/sagus[1].png" />
+  <meta property="og:image:alt" content="Sagus Solutions Logo" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sagus Solutions | About Us – Innovative Digital Agency" />
+  <meta name="twitter:description" content="Get to know Sagus Solutions, the digital agency offering websites, apps, AI automation, content creation, and chatbot integration." />
+  <meta name="twitter:image" content="https://www.sagussolutions.info/sagus[1].png" />
+</Helmet>
+
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
    
       
@@ -966,6 +985,8 @@ const About = () => {
       
     
     </div>
+    </>
+    
   );
 };
 
