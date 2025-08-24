@@ -311,11 +311,13 @@ const Header = () => {
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(94,234,212,0.05)_1px,transparent_1px)] bg-[length:10px_10px]"></div>
                   </div>
                   
-                  <img 
-                    src="/sagus[1].png" 
-                    alt="SAGUS SOLUTIONS" 
-                    className="h-6 md:h-8 w-auto transition-all duration-500 group-hover:scale-110 group-hover:rotate-2 filter brightness-110 contrast-110"
-                  />
+ <img 
+  src="/sagus[1].png" 
+  alt="SAGUS SOLUTIONS" 
+  className="h-6 md:h-8 w-auto transition-all duration-500 group-hover:scale-110 group-hover:rotate-2 filter brightness-200 contrast-125"
+/>
+
+
                 </div>
               </div>
             </div>
