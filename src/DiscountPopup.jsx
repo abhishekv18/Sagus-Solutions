@@ -1,137 +1,152 @@
 import React, { useState, useEffect } from 'react';
-import { X, Gift, ArrowRight, Phone, Star, Target, Users } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { X, Gift, ArrowRight, Phone, Star, Target, Users, Clock } from 'lucide-react';
 
 const DiscountPopup = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [timeLeft, setTimeLeft] = useState(300); // 5 minutes countdown
+  const [spotsLeft, setSpotsLeft] = useState(8); // Dynamic spots left
 
   useEffect(() => {
-    // Check if popup was shown recently
-    const popupShown = localStorage.getItem('discountPopupShown');
-    const lastShownTime = localStorage.getItem('discountPopupTime');
-    const currentTime = new Date().getTime();
-    const oneDay = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+    // Check if popup was shown recently (removed localStorage for demo)
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 2000); // Show after 2 seconds
 
-    if (!popupShown || (lastShownTime && currentTime - lastShownTime > oneDay)) {
-      const timer = setTimeout(() => {
-        setIsVisible(true);
-        localStorage.setItem('discountPopupShown', 'true');
-        localStorage.setItem('discountPopupTime', currentTime.toString());
-      }, 3000); // Show after 3 seconds
+    return () => clearTimeout(timer);
+  }, []);
 
+  useEffect(() => {
+    if (isVisible && timeLeft > 0) {
+      const timer = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
       return () => clearTimeout(timer);
     }
-  }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, [isVisible, timeLeft]);
 
   const closePopup = () => {
     setIsVisible(false);
   };
 
+  const handleServiceClick = () => {
+    setSpotsLeft(prev => Math.max(0, prev - 1));
+    closePopup();
+  };
+
+  const formatTime = (seconds) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
+  };
+
   if (!isVisible) return null;
 
+  const progressWidth = ((10 - spotsLeft) / 10) * 100;
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-60 animate-fadeIn">
-      <div className="relative bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden animate-scaleIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black bg-opacity-60 animate-fadeIn">
+      <div className="relative bg-white rounded-xl sm:rounded-2xl shadow-2xl w-full max-w-xs sm:max-w-md overflow-hidden animate-scaleIn">
         {/* Close Button */}
         <button
           onClick={closePopup}
-          className="absolute top-3 right-3 z-10 p-1.5 bg-slate-100 rounded-full hover:bg-slate-200 transition-colors"
+          className="absolute top-2 right-2 sm:top-3 sm:right-3 z-10 p-1 sm:p-1.5 bg-white bg-opacity-20 backdrop-blur-sm rounded-full hover:bg-opacity-30 transition-all"
           aria-label="Close popup"
         >
-          <X className="w-4 h-4 text-slate-600" />
+          <X className="w-4 h-4 text-white" />
         </button>
 
         {/* Content */}
         <div className="flex flex-col">
-          {/* Header with Image */}
-          <div className="relative h-40 bg-gradient-to-r from-teal-500 via-green-500 to-blue-600 overflow-hidden">
+          {/* Compact Header with Image */}
+          <div className="relative h-28 sm:h-32 bg-gradient-to-r from-teal-500 via-green-500 to-blue-600 overflow-hidden">
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-white text-center px-4">
-                <div className="flex justify-center mb-2">
+              <div className="text-white text-center px-3 sm:px-4">
+                <div className="flex justify-center mb-1 sm:mb-2">
                   <div className="relative">
-                    <Gift className="w-12 h-12 relative z-10" />
-                    <div className="absolute -inset-2 bg-teal-400 rounded-full blur-md opacity-70"></div>
+                    <Gift className="w-8 h-8 sm:w-10 sm:h-10 relative z-10" />
+                    <div className="absolute -inset-1 sm:-inset-2 bg-teal-400 rounded-full blur-md opacity-60"></div>
                   </div>
                 </div>
-                <h2 className="text-2xl font-bold mb-1">Exclusive Offer!</h2>
-                <p className="text-sm">For our first 10 customers</p>
+                <h2 className="text-lg sm:text-xl font-bold mb-0.5 sm:mb-1">Special Offer!</h2>
+                <p className="text-xs sm:text-sm opacity-90">Limited time only</p>
               </div>
             </div>
             
-            {/* Decorative Elements */}
-            <div className="absolute top-2 left-2 w-8 h-8 rounded-full bg-white opacity-20"></div>
-            <div className="absolute bottom-4 right-4 w-6 h-6 rounded-full bg-white opacity-30"></div>
-            <div className="absolute top-6 right-6 w-3 h-3 rounded-full bg-white opacity-40"></div>
+            {/* Floating decorative elements */}
+            <div className="absolute top-1 left-2 w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-white opacity-20 animate-pulse"></div>
+            <div className="absolute bottom-2 right-3 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-white opacity-30 animate-pulse" style={{animationDelay: '1s'}}></div>
+            <div className="absolute top-4 right-4 w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-white opacity-40 animate-pulse" style={{animationDelay: '0.5s'}}></div>
           </div>
 
-          {/* Body */}
-          <div className="p-5">
-            <div className="text-center mb-4">
-              <div className="inline-flex items-center px-3 py-1 bg-teal-50 text-teal-800 rounded-full text-sm font-medium mb-3">
-                <Target className="w-4 h-4 mr-1 text-teal-600" />
-                LIMITED SPOTS AVAILABLE
+          {/* Compact Body */}
+          <div className="p-3 sm:p-4">
+            {/* Countdown Timer */}
+            <div className="text-center mb-3">
+              <div className="inline-flex items-center px-2 py-1 bg-red-50 text-red-700 rounded-full text-xs font-medium mb-2">
+                <Clock className="w-3 h-3 mr-1" />
+                Ends in {formatTime(timeLeft)}
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-2">
-                15% Extra Discount
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-1">
+                20% OFF
               </h3>
-              <p className="text-slate-600 text-sm">
-                Be one of the first 10 customers to get an additional 15% off on all our services. 
-                Transform your business with our digital solutions at a special rate!
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                Get 20% discount on all services. Only {spotsLeft} spots remaining!
               </p>
             </div>
 
-            {/* Progress bar showing limited availability */}
-            <div className="mb-5">
+            {/* Compact Progress Bar */}
+            <div className="mb-3">
               <div className="flex justify-between text-xs text-slate-500 mb-1">
                 <span className="flex items-center">
                   <Users className="w-3 h-3 mr-1" />
-                  Spots filled: 2/10
+                  {10 - spotsLeft}/10 claimed
                 </span>
-                <span>Limited availability</span>
+                <span className="flex items-center">
+                  <Star className="w-3 h-3 mr-1 text-yellow-500 fill-current" />
+                  4.7/5
+                </span>
               </div>
-              <div className="w-full bg-slate-200 rounded-full h-2">
+              <div className="w-full bg-slate-200 rounded-full h-1.5">
                 <div 
-                  className="bg-gradient-to-r from-teal-500 to-green-500 h-2 rounded-full" 
-                  style={{ width: '20%' }}
+                  className="bg-gradient-to-r from-teal-500 to-green-500 h-1.5 rounded-full transition-all duration-500" 
+                  style={{ width: `${progressWidth}%` }}
                 ></div>
               </div>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Link 
-                to="/services" 
-                className="flex-1 flex items-center justify-center px-4 py-3 bg-gradient-to-r from-teal-500 to-green-500 text-white font-medium rounded-lg hover:from-teal-600 hover:to-green-600 transition-all shadow-lg shadow-teal-500/25 hover:shadow-teal-500/40"
-                onClick={closePopup}
+            {/* Compact Action Buttons */}
+            <div className="flex flex-col gap-2">
+              <button 
+                onClick={handleServiceClick}
+                className="w-full flex items-center justify-center px-3 py-2.5 bg-gradient-to-r from-teal-500 to-green-500 text-white font-medium rounded-lg hover:from-teal-600 hover:to-green-600 transition-all shadow-lg shadow-teal-500/25 hover:shadow-teal-500/40 text-sm"
               >
-                <span>Our Services</span>
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
-              <Link 
-                to="/contact" 
-                className="flex-1 flex items-center justify-center px-4 py-3 bg-white border border-slate-300 text-slate-700 font-medium rounded-lg hover:bg-slate-50 transition-all"
+                <span>Claim Discount</span>
+                <ArrowRight className="w-3 h-3 ml-2" />
+              </button>
+              <button 
                 onClick={closePopup}
+                className="w-full flex items-center justify-center px-3 py-2 bg-white border border-slate-300 text-slate-600 font-medium rounded-lg hover:bg-slate-50 transition-all text-sm"
               >
-                <Phone className="w-4 h-4 mr-2" />
+                <Phone className="w-3 h-3 mr-2" />
                 <span>Contact Us</span>
-              </Link>
+              </button>
+            </div>
+
+            {/* Trust indicators */}
+            <div className="flex justify-center items-center mt-3 text-xs text-slate-500">
+              <div className="flex items-center">
+                <div className="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-3 h-3 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <span className="ml-1">17+ happy clients</span>
+              </div>
             </div>
           </div>
 
-          {/* Footer */}
-          <div className="bg-slate-50 px-5 py-3 text-center border-t border-slate-100">
+          {/* Compact Footer */}
+          <div className="bg-slate-50 px-3 py-2 text-center border-t border-slate-100">
             <p className="text-xs text-slate-500">
-              Offer valid for first 10 customers only. Terms and conditions apply.
+              Valid for new customers only. No code needed.
             </p>
           </div>
         </div>
@@ -143,14 +158,26 @@ const DiscountPopup = () => {
           to { opacity: 1; }
         }
         @keyframes scaleIn {
-          from { transform: scale(0.95); opacity: 0; }
+          from { transform: scale(0.9); opacity: 0; }
           to { transform: scale(1); opacity: 1; }
+        }
+        @keyframes pulse {
+          0%, 100% { opacity: 0.4; }
+          50% { opacity: 0.8; }
         }
         .animate-fadeIn {
           animation: fadeIn 0.3s ease-out forwards;
         }
         .animate-scaleIn {
-          animation: scaleIn 0.3s ease-out forwards;
+          animation: scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+        .animate-pulse {
+          animation: pulse 2s infinite;
+        }
+        @media (max-width: 640px) {
+          .animate-scaleIn {
+            animation: scaleIn 0.3s ease-out forwards;
+          }
         }
       `}</style>
     </div>
