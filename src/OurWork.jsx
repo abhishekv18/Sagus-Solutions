@@ -2219,7 +2219,7 @@ const OurWork = () => {
           />
         )}
       </div>
-      <Footer/>
+     
       <style jsx>{`
         @keyframes fade-in-up {
           from {
