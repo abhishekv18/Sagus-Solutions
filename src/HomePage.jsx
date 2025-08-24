@@ -1356,7 +1356,7 @@ const Home = () => {
                       <ul className="space-y-2 md:space-y-3 mb-4 md:mb-6">
                         {service.features.map((feature, idx) => (
                           <li key={idx} className="flex items-center text-slate-700 text-sm md:text-base">
-                            <CheckCircle className={`w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 flex-shrink-0 text-transparent bg-gradient-to-r ${service.gradient} bg-clip-text`} />
+                           <CheckCircle className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 flex-shrink-0 text-green-500" />
                             <span className="font-medium">{feature}</span>
                           </li>
                         ))}
