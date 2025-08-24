@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, Gift, ArrowRight, Phone, Star, Target, Users, Clock } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const DiscountPopup = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,10 +27,7 @@ const DiscountPopup = () => {
     setIsVisible(false);
   };
 
-  const handleServiceClick = () => {
-    setSpotsLeft(prev => Math.max(0, prev - 1));
-    closePopup();
-  };
+ 
 
   const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
@@ -114,13 +112,16 @@ const DiscountPopup = () => {
 
             {/* Compact Action Buttons */}
             <div className="flex flex-col gap-2">
-              <button 
-                onClick={handleServiceClick}
+                <Link to='/services'>
+                 <button 
+                onClick={closePopup}
                 className="w-full flex items-center justify-center px-3 py-2.5 bg-gradient-to-r from-teal-500 to-green-500 text-white font-medium rounded-lg hover:from-teal-600 hover:to-green-600 transition-all shadow-lg shadow-teal-500/25 hover:shadow-teal-500/40 text-sm"
               >
-                <span>Claim Discount</span>
+                <span>View Services</span>
                 <ArrowRight className="w-3 h-3 ml-2" />
               </button>
+                </Link>
+             <Link to='/contact'>
               <button 
                 onClick={closePopup}
                 className="w-full flex items-center justify-center px-3 py-2 bg-white border border-slate-300 text-slate-600 font-medium rounded-lg hover:bg-slate-50 transition-all text-sm"
@@ -128,6 +129,8 @@ const DiscountPopup = () => {
                 <Phone className="w-3 h-3 mr-2" />
                 <span>Contact Us</span>
               </button>
+             </Link>
+             
             </div>
 
             {/* Trust indicators */}
