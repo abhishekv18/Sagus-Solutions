@@ -944,20 +944,21 @@ const About = () => {
               <p className="text-lg md:text-xl mb-8 md:mb-10 opacity-90 max-w-3xl mx-auto">
                 Let's collaborate to turn your digital dreams into reality with cutting-edge solutions
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
-                <Link to='/contact'>
-                  <button className="group px-6 py-3 md:px-8 md:py-4 lg:px-10 lg:py-4 bg-white text-teal-600 font-bold rounded-xl md:rounded-2xl hover:bg-slate-100 transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center text-sm md:text-base">
-                    <span>Start Your Journey</span>
-                    <ArrowRight className="w-4 h-4 md:w-5 md:h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                  </button>
-                </Link>
-                <Link to='/our-work'>
-                  <button className="group px-6 py-3 md:px-8 md:py-4 lg:px-10 lg:py-4 border-2 border-white text-white font-bold rounded-xl md:rounded-2xl hover:bg-white/10 transition-all duration-300 hover:scale-105 flex items-center justify-center text-sm md:text-base">
-                    <Projector className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-                    <span>View Projects</span>
-                  </button>
-                </Link>
-              </div>
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center">
+  <Link to='/contact'>
+    <button className="group px-6 py-3 md:px-8 md:py-4 lg:px-10 lg:py-4 bg-white text-teal-600 font-bold rounded-xl md:rounded-2xl hover:bg-slate-100 transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center text-sm md:text-base">
+      <span>Start Your Journey</span>
+      <ArrowRight className="w-4 h-4 md:w-5 md:h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+    </button>
+  </Link>
+  <Link to='/our-work'>
+    <button className="group px-6 py-3 md:px-8 md:py-4 lg:px-10 lg:py-4 border-2 border-white text-white font-bold rounded-xl md:rounded-2xl hover:bg-white/10 transition-all duration-300 hover:scale-105 flex items-center justify-center text-sm md:text-base">
+      <Projector className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+      <span>View Projects</span>
+    </button>
+  </Link>
+</div>
+
             </div>
           </div>
         </div>
