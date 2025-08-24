@@ -44,15 +44,15 @@ const Chatbot = () => {
     ],
      pricing: [
                 "Our competitive pricing:\n\n" +
-                "<div class='service-item'><span class='service-title'>Website Development:</span> <span class='service-price'>Starting at ₹4,499</span></div>\n" +
-                "<div class='service-item'><span class='service-title'>App Development:</span> <span class='service-price'>Starting at ₹4,999</span></div>\n" +
-                "<div class='service-item'><span class='service-title'>UI/UX Design:</span> <span class='service-price'>Starting at ₹2,499</span></div>\n" +
-                "<div class='service-item'><span class='service-title'>AI Chatbot:</span> <span class='service-price'>Starting at ₹4,499</span></div>\n" +
-                "<div class='service-item'><span class='service-title'>Content Marketing:</span> <span class='service-price'>₹2,499/month</span> (includes reels and posts)</div>\n\n" +
+                "<div class='service-item'><span class='service-title'>Website Development:</span> <span class='service-price'>Starting at ₹3,999</span></div>\n" +
+                "<div class='service-item'><span class='service-title'>App Development:</span> <span class='service-price'>Starting at ₹4,499</span></div>\n" +
+                "<div class='service-item'><span class='service-title'>UI/UX Design:</span> <span class='service-price'>Starting at ₹1,999</span></div>\n" +
+                "<div class='service-item'><span class='service-title'>AI Chatbot:</span> <span class='service-price'>Starting at ₹3,999</span></div>\n" +
+                "<div class='service-item'><span class='service-title'>Content Marketing:</span> <span class='service-price'>₹1,999/month</span> (includes reels and posts)</div>\n\n" +
                 "All projects are customized to your specific needs, so exact pricing may vary."
             ],
             websitePricing: [
-                "For <span class='service-title'>Website Development</span>, our pricing starts at <span class='service-price'>₹4,499</span>.\n\n" +
+                "For <span class='service-title'>Website Development</span>, our pricing starts at <span class='service-price'>₹3,999</span>.\n\n" +
                 "This includes:\n" +
                 "• Responsive design that works on all devices\n" +
                 "• SEO-friendly structure\n" +
@@ -61,7 +61,7 @@ const Chatbot = () => {
                 "Premium packages with e-commerce functionality and advanced features are also available."
             ],
             appPricing: [
-                "For <span class='service-title'>App Development</span>, our pricing starts at <span class='service-price'>₹4,999</span>.\n\n" +
+                "For <span class='service-title'>App Development</span>, our pricing starts at <span class='service-price'>₹4,499</span>.\n\n" +
                 "This includes:\n" +
                 "• Cross-platform compatibility (iOS & Android)\n" +
                 "• User-friendly interface\n" +
@@ -70,7 +70,7 @@ const Chatbot = () => {
                 "Advanced apps with complex features, APIs, and backend services are priced based on requirements."
             ],
             uiuxPricing: [
-                "For <span class='service-title'>UI/UX Design</span>, our pricing starts at <span class='service-price'>₹2,499</span>.\n\n" +
+                "For <span class='service-title'>UI/UX Design</span>, our pricing starts at <span class='service-price'>₹1,999</span>.\n\n" +
                 "This includes:\n" +
                 "• User research and analysis\n" +
                 "• Wireframing and prototyping\n" +
@@ -79,7 +79,7 @@ const Chatbot = () => {
                 "Complete design systems and brand identity packages are available at higher tiers."
             ],
             chatbotPricing: [
-                "For <span class='service-title'>AI Chatbot Integration</span>, our pricing starts at <span class='service-price'>₹4,499</span>.\n\n" +
+                "For <span class='service-title'>AI Chatbot Integration</span>, our pricing starts at <span class='service-price'>₹3,999</span>.\n\n" +
                 "This includes:\n" +
                 "• Basic conversational AI setup\n" +
                 "• Integration with your website\n" +
@@ -88,7 +88,7 @@ const Chatbot = () => {
                 "Advanced chatbots with CRM integration, multilingual support, and advanced AI capabilities are priced higher."
             ],
             contentPricing: [
-                "For <span class='service-title'>Content Marketing</span>, our pricing starts at <span class='service-price'>₹2,499/month</span>.\n\n" +
+                "For <span class='service-title'>Content Marketing</span>, our pricing starts at <span class='service-price'>₹1,999/month</span>.\n\n" +
                 "This includes:\n" +
                 "• 8 social media posts per month\n" +
                 "• 2 reels/short videos per month\n" +
@@ -98,11 +98,11 @@ const Chatbot = () => {
             ],
             servicesWithPricing: [
                 "Here are our services with pricing details:\n\n" +
-                "<div class='service-item'><span class='service-title'>Website Development:</span> Professional, responsive websites <span class='service-price'>Starting at ₹4,499</span></div>\n" +
-                "<div class='service-item'><span class='service-title'>App Development:</span> Cross-platform mobile applications <span class='service-price'>Starting at ₹4,999</span></div>\n" +
-                "<div class='service-item'><span class='service-title'>UI/UX Design:</span> User-centered design solutions <span class='service-price'>Starting at ₹2,499</span></div>\n" +
-                "<div class='service-item'><span class='service-title'>AI Chatbot Integration:</span> Intelligent automation <span class='service-price'>Starting at ₹4,499</span></div>\n" +
-                "<div class='service-item'><span class='service-title'>Content Marketing:</span> Strategic content including social media <span class='service-price'>₹2,499/month</span></div>\n\n" +
+                "<div class='service-item'><span class='service-title'>Website Development:</span> Professional, responsive websites <span class='service-price'>Starting at ₹3,999</span></div>\n" +
+                "<div class='service-item'><span class='service-title'>App Development:</span> Cross-platform mobile applications <span class='service-price'>Starting at ₹4,499</span></div>\n" +
+                "<div class='service-item'><span class='service-title'>UI/UX Design:</span> User-centered design solutions <span class='service-price'>Starting at ₹1,999</span></div>\n" +
+                "<div class='service-item'><span class='service-title'>AI Chatbot Integration:</span> Intelligent automation <span class='service-price'>Starting at ₹3,999</span></div>\n" +
+                "<div class='service-item'><span class='service-title'>Content Marketing:</span> Strategic content including social media <span class='service-price'>₹1,999/month</span></div>\n\n" +
                 "All projects are customized to your specific needs. Would you like to discuss a particular project?"
             ],
             contact: [

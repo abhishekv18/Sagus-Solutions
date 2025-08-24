@@ -733,7 +733,7 @@ const Services = () => {
       stats: "11+",
       metric: "Projects Delivered",
       category: "development",
-      price: "Starting at ₹4,499"
+      price: "Starting at ₹3,999"
     },
     {
       icon: <Palette className="w-6 h-6 md:w-8 md:h-8" />,
@@ -750,7 +750,7 @@ const Services = () => {
       stats: "98%",
       metric: "Client Satisfaction",
       category: "design",
-      price: "Starting at ₹2,499"
+      price: "Starting at ₹1,999"
     },
     {
       icon: <Smartphone className="w-6 h-6 md:w-8 md:h-8" />,
@@ -767,7 +767,7 @@ const Services = () => {
       stats: "5+",
       metric: "Apps in Store",
       category: "development",
-      price: "Starting at ₹4,999"
+      price: "Starting at ₹4,499"
     },
     {
       icon: <MessageCircle className="w-6 h-6 md:w-8 md:h-8" />,
@@ -784,7 +784,7 @@ const Services = () => {
       stats: "24/7",
       metric: "Automated Support",
       category: "ai",
-      price: "Starting at ₹4,499"
+      price: "Starting at ₹3,999"
     },
     {
       icon: <Bot className="w-6 h-6 md:w-8 md:h-8" />,
@@ -801,7 +801,7 @@ const Services = () => {
       stats: "85%",
       metric: "Efficiency Increase",
       category: "ai",
-      price: "Starting at ₹4,999"
+      price: "Starting at ₹3,999"
     },
     {
       icon: <Video className="w-6 h-6 md:w-8 md:h-8" />,
@@ -817,7 +817,7 @@ const Services = () => {
       stats: "4K+",
       metric: "Ultra HD Quality",
       category: "content",
-      price: "Starting at ₹2,499"
+      price: "Starting at ₹1,999"
     },
   ];
 
