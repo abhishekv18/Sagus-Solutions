@@ -11,7 +11,7 @@
   .chatbot-wrapper {
     bottom: 15px;   /* a little higher to avoid nav bars */
     right: 15px;    /* closer to edge */
-    transform: scale(0.9); /* slightly smaller if needed */
+   /* slightly smaller if needed */
   }
 }
 
@@ -20,7 +20,7 @@
   .chatbot-wrapper {
     bottom: 12px;
     right: 12px;
-    transform: scale(0.8);
+   
   }
 }
 
