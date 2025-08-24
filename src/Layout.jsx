@@ -6,6 +6,7 @@ import Footer from './Footer';
 
 import ScrollToTopButton from './ScrollToTopButton';
 import Chatbot from './Chatbot';
+import DiscountPopup from './DiscountPopup';
 
 const Layout = ({ children }) => {
   return (
@@ -15,6 +16,7 @@ const Layout = ({ children }) => {
         {children}
       </main>
       <ScrollToTopButton/>
+      <DiscountPopup/>
       <Chatbot/>
       <Footer />
       {/* <ChatbotIframe /> */}

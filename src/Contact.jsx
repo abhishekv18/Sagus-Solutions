@@ -741,7 +741,7 @@ const Contact = () => {
               {/* Contact Information */}
               <div className="space-y-6 md:space-y-8">
                 <div>
-                  <h2 className={`text-2xl md:text-3xl text-center font-bold text-slate-900 mb-4 md:mb-6 transition-all duration-700 ${contentLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '300ms' }}>Get in Touch</h2>
+                  <h2 className={`text-2xl md:text-3xl font-bold text-slate-900 mb-4 md:mb-6 transition-all duration-700 ${contentLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '300ms' }}>Get in Touch</h2>
                   <p className={`text-slate-600 mb-6 md:mb-8 transition-all duration-700 ${contentLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '400ms' }}>
                     We're here to help you with your digital transformation journey. Whether you have a question about our services, 
                     need a quote, or want to discuss a potential project, our team is ready to assist you.
@@ -1025,16 +1025,17 @@ const Contact = () => {
                 Let's discuss your project and explore how we can help you achieve your goals
               </p>
              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center relative z-10">
-  <a
-    href="https://wa.me/918604050163?text=Hello%2C%20I%20would%20like%20to%20schedule%20a%20meeting%20to%20discuss%20your%20services%20and%20explore%20how%20we%20can%20work%20together.%20Please%20let%20me%20know%20a%20suitable%20time."
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <button className="px-6 py-3 md:px-8 md:py-4 bg-white text-teal-600 font-semibold rounded-lg md:rounded-xl hover:bg-slate-100 transition-all duration-300 hover:scale-105 shadow-lg flex items-center text-sm md:text-base">
-      <Calendar className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
-      Book a Meeting
-    </button>
-  </a>
+<a 
+  href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Quick+Meeting+with+Sagus+Solutions&details=Let's+connect+for+a+10+minute+discussion.&dates=20250824T090000Z/20250824T091000Z&location=Online&add=sagussolutions@gmail.com"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <button className="px-6 py-3 md:px-8 md:py-4 bg-white text-teal-600 font-semibold rounded-lg md:rounded-xl hover:bg-slate-100 transition-all duration-300 hover:scale-105 shadow-lg flex items-center text-sm md:text-base">
+    <Calendar className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
+    Book a Meeting
+  </button>
+</a>
+
 
   <a href="tel:8604050163">
     <button className="px-6 py-3 md:px-8 md:py-4 border-2 border-white text-white font-semibold rounded-lg md:rounded-xl hover:bg-white/10 transition-all duration-300 hover:scale-105 flex items-center text-sm md:text-base">

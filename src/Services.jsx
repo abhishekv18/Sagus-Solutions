@@ -855,7 +855,7 @@ const Services = () => {
   ];
   
   const downloadQuotation = () => {
-    const pdfUrl = '/sagus solution quation pdf 2.pdf';
+    const pdfUrl = '/updated quation.pdf';
     const link = document.createElement('a');
     link.href = pdfUrl;
     link.download = 'DigitalAptech-Quotation.pdf';
