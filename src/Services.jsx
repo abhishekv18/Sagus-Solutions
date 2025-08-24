@@ -885,7 +885,7 @@ const Services = () => {
     },
     {
       icon: <Star className="w-5 h-5 md:w-6 md:h-6" />,
-      number: "4.5/5",
+      number: "4/5",
       label: "Client Rating",
       color: "text-purple-600"
     }
