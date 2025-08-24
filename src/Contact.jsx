@@ -673,7 +673,7 @@ const Contact = () => {
   const socialLinks = [
     {
       icon: <Facebook className="w-4 h-4 md:w-5 md:h-5" />,
-      url: "https://facebook.com/",
+      url: "https://www.facebook.com/share/1B6jEFiA1S/",
       name: "Facebook"
     },
     {
