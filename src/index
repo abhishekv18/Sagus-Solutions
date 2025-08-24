@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sagus Solutions Chatbot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #2c3e50);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+        
+        .chat-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+        
+        .chat-header {
+            background: linear-gradient(135deg, #1a2a6c, #2c3e50);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: #f8f9fa;
+        }
+        
+        .message {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            line-height: 1.5;
+            position: relative;
+        }
+        
+        .user-message {
+            align-self: flex-end;
+            background: #1a2a6c;
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .bot-message {
+            align-self: flex-start;
+            background: white;
+            color: #333;
+            border: 1px solid #ddd;
+            border-bottom-left-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .message-time {
+            font-size: 0.7rem;
+            opacity: 0.7;
+            margin-top: 5px;
+            text-align: right;
+        }
+        
+        .service-item {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f0f8ff;
+            border-radius: 8px;
+            border-left: 4px solid #1a2a6c;
+        }
+        
+        .service-title {
+            font-weight: bold;
+            color: #1a2a6c;
+        }
+        
+        .service-price {
+            color: #b21f1f;
+            font-weight: 600;
+        }
+        
+        .chat-input-container {
+            display: flex;
+            padding: 15px;
+            border-top: 1px solid #eee;
+            background: white;
+        }
+        
+        .chat-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+            font-size: 1rem;
+        }
+        
+        .send-button {
+            margin-left: 10px;
+            background: #1a2a6c;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 0 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .send-button:hover {
+            background: #2c3e50;
+        }
+        
+        .suggestion-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 15px;
+            background: white;
+            border-top: 1px solid #eee;
+        }
+        
+        .chip {
+            background: #eaf2f8;
+            padding: 8px 15px;
+            border-radius: 18px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 1px solid #ddd;
+        }
+        
+        .chip:hover {
+            background: #d6eaf8;
+            transform: translateY(-2px);
+        }
+        
+        .typing-indicator {
+            display: flex;
+            padding: 10px;
+            align-items: center;
+        }
+        
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #bbb;
+            border-radius: 50%;
+            margin: 0 3px;
+            animation: typingAnimation 1.4s infinite ease-in-out;
+        }
+        
+        .typing-dot:nth-child(1) {
+            animation-delay: 0s;
+        }
+        
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        .url-link {
+            color: #1a2a6c;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px dotted #1a2a6c;
+            transition: all 0.3s;
+        }
+        
+        .url-link:hover {
+            color: #b21f1f;
+            border-bottom: 1px solid #b21f1f;
+        }
+        
+        @keyframes typingAnimation {
+            0%, 60%, 100% {
+                transform: translateY(0);
+            }
+            30% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .message {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Sagus Solutions Assistant</h2>
+            <p>How can I help you today?</p>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot-message">
+                Hi there! I'm the Sagus Solutions assistant. I can help you learn about our services, pricing, and how we can help your business grow. What would you like to know?
+                <div class="message-time">Just now</div>
+            </div>
+        </div>
+        <div class="suggestion-chips">
+            <div class="chip" onclick="sendMessage('What services do you offer?')">Services</div>
+            <div class="chip" onclick="sendMessage('What are your prices?')">Pricing</div>
+            <div class="chip" onclick="sendMessage('How can I contact you?')">Contact</div>
+            <div class="chip" onclick="sendMessage('What is Sagus Solutions?')">About Us</div>
+            <div class="chip" onclick="sendMessage('Show me your previous work')">Portfolio</div>
+        </div>
+        <div class="chat-input-container">
+            <input type="text" class="chat-input" id="user-input" placeholder="Type your message here..." onkeypress="handleKeyPress(event)">
+            <button class="send-button" onclick="sendUserMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        // Knowledge base for the chatbot
+        const knowledgeBase = {
+            greeting: [
+                "Hello! Welcome to Sagus Solutions. How can I assist you today?",
+                "Hi there! How can I help you with your digital transformation needs?",
+                "Welcome! I'm here to help you learn about Sagus Solutions and our services.",
+                "Hey! Great to see you here. What can I do for you today?",
+                "Hi! Thanks for stopping by. How can I help?"
+            ],
+            services: [
+                "We offer a comprehensive range of digital services:\n\n" +
+                "<div class='service-item'><span class='service-title'>Website Development</span> - Professional, responsive websites tailored to your business needs</div>\n" +
+                "<div class='service-item'><span class='service-title'>App Development</span> - Cross-platform mobile applications for iOS and Android</div>\n" +
+                "<div class='service-item'><span class='service-title'>UI/UX Design</span> - User-centered design that enhances user experience</div>\n" +
+                "<div class='service-item'><span class='service-title'>AI Chatbot Integration</span> - Intelligent chatbots to automate customer interactions</div>\n" +
+                "<div class='service-item'><span class='service-title'>Content Marketing</span> - Strategic content creation including social media posts and reels</div>\n" +
+                "<div class='service-item'><span class='service-title'>Video Production</span> - Professional video content for marketing and engagement</div>"
+            ],
+            pricing: [
+                "Our competitive pricing:\n\n" +
+                "<div class='service-item'><span class='service-title'>Website Development:</span> <span class='service-price'>Starting at ₹4,499</span></div>\n" +
+                "<div class='service-item'><span class='service-title'>App Development:</span> <span class='service-price'>Starting at ₹4,999</span></div>\n" +
+                "<div class='service-item'><span class='service-title'>UI/UX Design:</span> <span class='service-price'>Starting at ₹2,499</span></div>\n" +
+                "<div class='service-item'><span class='service-title'>AI Chatbot:</span> <span class='service-price'>Starting at ₹4,499</span></div>\n" +
+                "<div class='service-item'><span class='service-title'>Content Marketing:</span> <span class='service-price'>₹2,499/month</span> (includes reels and posts)</div>\n\n" +
+                "All projects are customized to your specific needs, so exact pricing may vary."
+            ],
+            websitePricing: [
+                "For <span class='service-title'>Website Development</span>, our pricing starts at <span class='service-price'>₹4,499</span>.\n\n" +
+                "This includes:\n" +
+                "• Responsive design that works on all devices\n" +
+                "• SEO-friendly structure\n" +
+                "• Basic content management system\n" +
+                "• Contact forms and integration\n\n" +
+                "Premium packages with e-commerce functionality and advanced features are also available."
+            ],
+            appPricing: [
+                "For <span class='service-title'>App Development</span>, our pricing starts at <span class='service-price'>₹4,999</span>.\n\n" +
+                "This includes:\n" +
+                "• Cross-platform compatibility (iOS & Android)\n" +
+                "• User-friendly interface\n" +
+                "• Basic functionality and features\n" +
+                "• App store submission assistance\n\n" +
+                "Advanced apps with complex features, APIs, and backend services are priced based on requirements."
+            ],
+            uiuxPricing: [
+                "For <span class='service-title'>UI/UX Design</span>, our pricing starts at <span class='service-price'>₹2,499</span>.\n\n" +
+                "This includes:\n" +
+                "• User research and analysis\n" +
+                "• Wireframing and prototyping\n" +
+                "• Visual design creation\n" +
+                "• Usability testing guidance\n\n" +
+                "Complete design systems and brand identity packages are available at higher tiers."
+            ],
+            chatbotPricing: [
+                "For <span class='service-title'>AI Chatbot Integration</span>, our pricing starts at <span class='service-price'>₹4,499</span>.\n\n" +
+                "This includes:\n" +
+                "• Basic conversational AI setup\n" +
+                "• Integration with your website\n" +
+                "• Training with your business knowledge\n" +
+                "• Basic analytics dashboard\n\n" +
+                "Advanced chatbots with CRM integration, multilingual support, and advanced AI capabilities are priced higher."
+            ],
+            contentPricing: [
+                "For <span class='service-title'>Content Marketing</span>, our pricing starts at <span class='service-price'>₹2,499/month</span>.\n\n" +
+                "This includes:\n" +
+                "• 8 social media posts per month\n" +
+                "• 2 reels/short videos per month\n" +
+                "• Basic content strategy\n" +
+                "• Performance analytics\n\n" +
+                "Comprehensive packages with blog content, email marketing, and advanced analytics are available."
+            ],
+            servicesWithPricing: [
+                "Here are our services with pricing details:\n\n" +
+                "<div class='service-item'><span class='service-title'>Website Development:</span> Professional, responsive websites <span class='service-price'>Starting at ₹4,499</span></div>\n" +
+                "<div class='service-item'><span class='service-title'>App Development:</span> Cross-platform mobile applications <span class='service-price'>Starting at ₹4,999</span></div>\n" +
+                "<div class='service-item'><span class='service-title'>UI/UX Design:</span> User-centered design solutions <span class='service-price'>Starting at ₹2,499</span></div>\n" +
+                "<div class='service-item'><span class='service-title'>AI Chatbot Integration:</span> Intelligent automation <span class='service-price'>Starting at ₹4,499</span></div>\n" +
+                "<div class='service-item'><span class='service-title'>Content Marketing:</span> Strategic content including social media <span class='service-price'>₹2,499/month</span></div>\n\n" +
+                "All projects are customized to your specific needs. Would you like to discuss a particular project?"
+            ],
+            contact: [
+                "You can reach us through:\n\n" +
+                "• <strong>Email:</strong> sagussolutions@gmail.com\n" +
+                "• <strong>Phone:</strong> +91 8604050163\n" +
+                "• <strong>Website:</strong> <a href='https://www.sagussolutions.info' target='_blank' class='url-link'>www.sagussolutions.info</a>\n\n" +
+                "We'd be happy to discuss your project requirements! Feel free to reach out anytime."
+            ],
+            about: [
+                "Sagus Solutions is your partner for digital transformation. We specialize in:\n\n" +
+                "• Web Design & Development\n" +
+                "• AI Solutions & Automation\n" +
+                "• Mobile App Development\n" +
+                "• Strategic Content Creation\n\n" +
+                "Our mission is to simplify processes, boost engagement, and deliver measurable results for businesses."
+            ],
+            work: [
+                "We have delivered multiple projects in areas like website development, mobile apps, content creation, and AI automation.\n\n" +
+                "You can explore some of our live work here: <a href='https://sagussolutions.info/our-work' target='_blank' class='url-link'>sagussolutions.info/our-work</a>\n\n" +
+                "Our portfolio showcases various projects we've created for our clients across different industries."
+            ],
+            howAreYou: [
+                "I'm doing great, thanks for asking! Ready to help you with all your digital needs.",
+                "I'm functioning perfectly! How can I assist you today?",
+                "I'm doing well, thank you! How about you?",
+                "All systems operational! What can I help you with?",
+                "I'm excellent! Ready to help you with Sagus Solutions services."
+            ],
+            thanks: [
+                "You're welcome! Happy to help.",
+                "Anytime! Let me know if you need anything else.",
+                "Glad I could assist! Feel free to ask if you have more questions.",
+                "You're very welcome! Is there anything else you'd like to know?",
+                "My pleasure! Don't hesitate to ask if you need more information."
+            ],
+            goodbye: [
+                "Goodbye! Thanks for visiting Sagus Solutions.",
+                "See you later! Feel free to come back if you have more questions.",
+                "Have a great day! Remember we're here to help with your digital needs.",
+                "Bye for now! Don't hesitate to reach out if you need anything.",
+                "Talk to you soon! Good luck with your projects."
+            ],
+            default: [
+                "I'm not sure I understand. Could you please rephrase your question?",
+                "I'm still learning about Sagus Solutions. Could you try asking about our services, pricing, or how to contact us?",
+                "I don't have information about that yet. Please feel free to ask about our services or contact us directly for specific queries.",
+                "That's an interesting question! For detailed information, you might want to contact our team directly.",
+                "I'm primarily focused on Sagus Solutions services. Could you ask about our web development, app creation, or other digital services?"
+            ]
+        };
+
+        // Function to handle sending messages
+        function sendUserMessage() {
+            const userInput = document.getElementById('user-input');
+            const message = userInput.value.trim();
+            
+            if (message !== '') {
+                sendMessage(message);
+                userInput.value = '';
+            }
+        }
+
+        // Function to handle key press (Enter key)
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendUserMessage();
+            }
+        }
+
+        // Function to send a message (both user and bot)
+        function sendMessage(message) {
+            const chatMessages = document.getElementById('chat-messages');
+            
+            // Add user message
+            const userMessageElement = document.createElement('div');
+            userMessageElement.classList.add('message', 'user-message');
+            userMessageElement.textContent = message;
+            
+            // Add timestamp
+            const timeElement = document.createElement('div');
+            timeElement.classList.add('message-time');
+            timeElement.textContent = getCurrentTime();
+            userMessageElement.appendChild(timeElement);
+            
+            chatMessages.appendChild(userMessageElement);
+            
+            // Show typing indicator
+            const typingIndicator = document.createElement('div');
+            typingIndicator.classList.add('typing-indicator');
+            typingIndicator.id = 'typing-indicator';
+            typingIndicator.innerHTML = `
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            `;
+            chatMessages.appendChild(typingIndicator);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            
+            // Generate and add bot response after a delay
+            setTimeout(() => {
+                // Remove typing indicator
+                const indicator = document.getElementById('typing-indicator');
+                if (indicator) {
+                    indicator.remove();
+                }
+                
+                const botResponse = generateResponse(message);
+                const botMessageElement = document.createElement('div');
+                botMessageElement.classList.add('message', 'bot-message');
+                botMessageElement.innerHTML = botResponse;
+                
+                // Add timestamp to bot message
+                const botTimeElement = document.createElement('div');
+                botTimeElement.classList.add('message-time');
+                botTimeElement.textContent = getCurrentTime();
+                botMessageElement.appendChild(botTimeElement);
+                
+                chatMessages.appendChild(botMessageElement);
+                
+                // Scroll to bottom
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 1000 + Math.random() * 1000);
+        }
+
+        // Function to generate a response based on user input
+        function generateResponse(input) {
+            const lowerInput = input.toLowerCase();
+            
+            // Greetings
+            if (lowerInput.includes('hi') || lowerInput.includes('hello') || lowerInput.includes('hey') || 
+                lowerInput.includes('good morning') || lowerInput.includes('good afternoon') || lowerInput.includes('good evening')) {
+                return getRandomResponse(knowledgeBase.greeting);
+            }
+            
+            // How are you
+            if (lowerInput.includes('how are you') || lowerInput.includes('how do you do') || lowerInput.includes('how\'s it going')) {
+                return getRandomResponse(knowledgeBase.howAreYou);
+            }
+            
+            // Thanks
+            if (lowerInput.includes('thank') || lowerInput.includes('thanks') || lowerInput.includes('appreciate')) {
+                return getRandomResponse(knowledgeBase.thanks);
+            }
+            
+            // Goodbye
+            if (lowerInput.includes('bye') || lowerInput.includes('goodbye') || lowerInput.includes('see you') || 
+                lowerInput.includes('see ya') || lowerInput.includes('cya')) {
+                return getRandomResponse(knowledgeBase.goodbye);
+            }
+            
+            // Website pricing
+            if (lowerInput.includes('website') && (lowerInput.includes('price') || lowerInput.includes('cost') || lowerInput.includes('how much'))) {
+                return getRandomResponse(knowledgeBase.websitePricing);
+            }
+            
+            // App pricing
+            if ((lowerInput.includes('app') || lowerInput.includes('application')) && (lowerInput.includes('price') || lowerInput.includes('cost') || lowerInput.includes('how much'))) {
+                return getRandomResponse(knowledgeBase.appPricing);
+            }
+            
+            // UI/UX pricing
+            if ((lowerInput.includes('ui') || lowerInput.includes('ux') || lowerInput.includes('design')) && (lowerInput.includes('price') || lowerInput.includes('cost') || lowerInput.includes('how much'))) {
+                return getRandomResponse(knowledgeBase.uiuxPricing);
+            }
+            
+            // Chatbot pricing
+            if ((lowerInput.includes('chatbot') || lowerInput.includes('ai') || lowerInput.includes('bot')) && (lowerInput.includes('price') || lowerInput.includes('cost') || lowerInput.includes('how much'))) {
+                return getRandomResponse(knowledgeBase.chatbotPricing);
+            }
+            
+            // Content pricing
+            if ((lowerInput.includes('content') || lowerInput.includes('marketing')) && (lowerInput.includes('price') || lowerInput.includes('cost') || lowerInput.includes('how much'))) {
+                return getRandomResponse(knowledgeBase.contentPricing);
+            }
+            
+            // Services with pricing
+            if ((lowerInput.includes('service') && lowerInput.includes('price')) || 
+                (lowerInput.includes('what') && lowerInput.includes('offer') && lowerInput.includes('price')) ||
+                lowerInput.includes('services and pricing') || lowerInput.includes('pricing and services')) {
+                return getRandomResponse(knowledgeBase.servicesWithPricing);
+            }
+            
+            // Services
+            if (lowerInput.includes('service') || lowerInput.includes('what do you offer') || lowerInput.includes('provide') || 
+                lowerInput.includes('do for') || lowerInput.includes('website') || lowerInput.includes('app') || 
+                lowerInput.includes('development') || lowerInput.includes('design') || lowerInput.includes('ai') || 
+                lowerInput.includes('chatbot') || lowerInput.includes('content') || lowerInput.includes('video')) {
+                return getRandomResponse(knowledgeBase.services);
+            }
+            
+            // Pricing
+            if (lowerInput.includes('price') || lowerInput.includes('cost') || lowerInput.includes('how much') || 
+                lowerInput.includes('rate') || lowerInput.includes('charg') || lowerInput.includes('package')) {
+                return getRandomResponse(knowledgeBase.pricing);
+            }
+            
+            // Contact
+            if (lowerInput.includes('contact') || lowerInput.includes('email') || lowerInput.includes('phone') || 
+                lowerInput.includes('number') || lowerInput.includes('call') || lowerInput.includes('reach')) {
+                return getRandomResponse(knowledgeBase.contact);
+            }
+            
+            // About
+            if (lowerInput.includes('about') || lowerInput.includes('what is sagus') || lowerInput.includes('tell me about') || 
+                lowerInput.includes('company') || lowerInput.includes('business')) {
+                return getRandomResponse(knowledgeBase.about);
+            }
+            
+            // Work
+            if (lowerInput.includes('work') || lowerInput.includes('portfolio') || lowerInput.includes('project') || 
+                lowerInput.includes('example') || lowerInput.includes('sample') || lowerInput.includes('show me')) {
+                return getRandomResponse(knowledgeBase.work);
+            }
+            
+            // Default response
+            return getRandomResponse(knowledgeBase.default);
+        }
+
+        // Function to get a random response from an array
+        function getRandomResponse(responses) {
+            return responses[Math.floor(Math.random() * responses.length)];
+        }
+
+        // Function to get current time in HH:MM format
+        function getCurrentTime() {
+            const now = new Date();
+            return ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')};
+        }
+
+        // Initialize with a welcome message after a short delay
+        setTimeout(() => {
+            const chatMessages = document.getElementById('chat-messages');
+            const welcomeMessage = document.createElement('div');
+            welcomeMessage.classList.add('message', 'bot-message');
+            welcomeMessage.textContent = "Feel free to ask about our services, pricing, or anything else!";
+            
+            // Add timestamp to welcome message
+            const timeElement = document.createElement('div');
+            timeElement.classList.add('message-time');
+            timeElement.textContent = getCurrentTime();
+            welcomeMessage.appendChild(timeElement);
+            
+            chatMessages.appendChild(welcomeMessage);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 1500);
+    </script>
+</body>
+</html>
