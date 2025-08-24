@@ -939,10 +939,13 @@ const Services = () => {
                       <div className="text-xs md:text-sm text-slate-500 mb-1">Pricing</div>
                       <div className="text-base md:text-lg font-bold text-slate-900">{service.price}</div>
                     </div>
-                    <button className="group/btn inline-flex items-center px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-teal-500 to-green-500 text-white font-semibold rounded-lg md:rounded-xl hover:from-teal-400 hover:to-green-400 transition-all duration-300 shadow-lg shadow-teal-500/25 hover:shadow-xl hover:shadow-teal-500/30 text-xs md:text-sm">
+                    <Link to='/contact'>
+                       <button className="group/btn inline-flex items-center px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-teal-500 to-green-500 text-white font-semibold rounded-lg md:rounded-xl hover:from-teal-400 hover:to-green-400 transition-all duration-300 shadow-lg shadow-teal-500/25 hover:shadow-xl hover:shadow-teal-500/30 text-xs md:text-sm">
                       Get Started
                       <ArrowRight className="w-3 h-3 md:w-4 md:h-4 ml-1 md:ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" />
                     </button>
+                    </Link>
+                 
                   </div>
                 </div>
 
