@@ -313,23 +313,29 @@
   .chatbot-container {
     width: 92%;
     right: 4%;
-    height: 62vh;
+    height: 55vh; /* Reduced from 62vh */
     bottom: 75px;
     border-radius: 14px;
+    transform-origin: bottom right; /* Scale from bottom right corner */
+    transform: translateY(20px) scale(0.95); /* Slightly smaller */
+  }
+  
+  .chatbot-container.active {
+    transform: translateY(0) scale(0.95); /* Slightly smaller when active */
   }
   
   .chat-header {
-    padding: 14px;
+    padding: 12px 14px; /* Reduced padding */
   }
   
   .chatbot-avatar {
-    width: 36px;
-    height: 36px;
+    width: 34px; /* Smaller avatar */
+    height: 34px;
     font-size: 16px;
   }
   
   .header-text h3 {
-    font-size: 15px;
+    font-size: 14px; /* Smaller heading */
   }
   
   .header-text p {
@@ -342,7 +348,7 @@
   }
   
   .chat-messages {
-    padding: 14px;
+    padding: 12px 14px; /* Reduced padding */
     gap: 10px;
   }
   
@@ -357,12 +363,12 @@
   }
   
   .suggestion-chips {
-    padding: 12px;
+    padding: 10px 12px; /* Reduced padding */
     gap: 6px;
   }
   
   .chip {
-    padding: 7px 12px;
+    padding: 6px 12px; /* Smaller chips */
     font-size: 12px;
     gap: 4px;
   }
@@ -372,7 +378,7 @@
   }
   
   .chat-input-container {
-    padding: 14px;
+    padding: 12px 14px; /* Reduced padding */
   }
   
   .chat-input {
@@ -381,13 +387,14 @@
   }
   
   .send-button {
-    width: 40px;
-    height: 40px;
+    width: 38px; /* Smaller button */
+    height: 38px;
   }
   
   .service-item {
     padding: 8px;
     font-size: 13px;
+    margin: 6px 0; /* Reduced margin */
   }
 }
 
@@ -398,8 +405,8 @@
   }
   
   .floating-chat-btn {
-    width: 46px;
-    height: 46px;
+    width: 44px; /* Smaller button */
+    height: 44px;
     bottom: 12px;
     right: 12px;
   }
@@ -414,27 +421,32 @@
   .chatbot-container {
     width: 94%;
     right: 3%;
-    height: 68vh;
+    height: 60vh; /* Reduced from 68vh */
     bottom: 65px;
     border-radius: 12px;
+    transform: translateY(20px) scale(0.9); /* Even smaller on very small screens */
+  }
+  
+  .chatbot-container.active {
+    transform: translateY(0) scale(0.9); /* Even smaller when active */
   }
   
   .chat-header {
-    padding: 12px;
+    padding: 10px 12px; /* Further reduced padding */
   }
   
   .header-content {
-    gap: 10px;
+    gap: 8px; /* Reduced gap */
   }
   
   .chatbot-avatar {
-    width: 34px;
-    height: 34px;
-    font-size: 15px;
+    width: 30px; /* Even smaller avatar */
+    height: 30px;
+    font-size: 14px;
   }
   
   .header-text h3 {
-    font-size: 14px;
+    font-size: 13px; /* Smaller heading */
   }
   
   .header-text p {
@@ -447,19 +459,19 @@
   }
   
   .chat-close svg {
-    width: 16px;
-    height: 16px;
+    width: 14px; /* Smaller icon */
+    height: 14px;
   }
   
   .chat-messages {
-    padding: 12px;
+    padding: 10px 12px; /* Further reduced padding */
     gap: 8px;
   }
   
   .message {
     max-width: 90%;
     font-size: 12px;
-    padding: 9px 12px;
+    padding: 8px 12px; /* Reduced padding */
     border-radius: 16px;
   }
   
@@ -468,12 +480,12 @@
   }
   
   .suggestion-chips {
-    padding: 10px;
+    padding: 8px 10px; /* Further reduced padding */
     gap: 5px;
   }
   
   .chip {
-    padding: 6px 10px;
+    padding: 5px 10px; /* Smaller chips */
     font-size: 11px;
     border-radius: 18px;
   }
@@ -483,19 +495,19 @@
   }
   
   .chat-input-container {
-    padding: 12px;
+    padding: 10px 12px; /* Further reduced padding */
     gap: 6px;
   }
   
   .chat-input {
-    padding: 9px 12px;
+    padding: 8px 12px; /* Reduced padding */
     font-size: 12px;
     border-radius: 20px;
   }
   
   .send-button {
-    width: 38px;
-    height: 38px;
+    width: 36px; /* Even smaller button */
+    height: 36px;
   }
   
   .send-button svg {
@@ -504,15 +516,16 @@
   }
   
   .service-item {
-    padding: 7px;
+    padding: 6px; /* Reduced padding */
     font-size: 12px;
     border-left-width: 3px;
+    margin: 4px 0; /* Reduced margin */
   }
 }
 
 /* Scrollbar styling */
 .chat-messages::-webkit-scrollbar {
-  width: 5px;
+  width: 4px; /* Thinner scrollbar */
 }
 
 .chat-messages::-webkit-scrollbar-track {
@@ -532,7 +545,7 @@
 /* For very small devices (height less than 600px) */
 @media (max-height: 600px) {
   .chatbot-container {
-    height: 55vh;
+    height: 50vh; /* Reduced from 55vh */
     bottom: 70px;
   }
 }
@@ -540,8 +553,13 @@
 /* For landscape orientation on mobile */
 @media (max-width: 768px) and (orientation: landscape) {
   .chatbot-container {
-    height: 70vh;
+    height: 65vh; /* Reduced from 70vh */
     width: 70%;
     right: 15%;
+    transform: translateY(20px) scale(0.85); /* Smaller in landscape */
+  }
+  
+  .chatbot-container.active {
+    transform: translateY(0) scale(0.85); /* Smaller when active */
   }
 }
