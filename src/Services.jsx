@@ -630,8 +630,12 @@ const AnimatedCounter = ({ value, duration = 2000 }) => {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
   const isPercentage = value.includes('%');
-  const numericValue = parseFloat(value.replace(/[^0-9.]/g, ''));
-  const suffix = value.replace(numericValue.toString(), '');
+  // const numericValue = parseFloat(value.replace(/[^0-9.]/g, ''));
+  // const suffix = value.replace(numericValue.toString(), '');
+  const match = value.match(/^[0-9.]+/);  // match only the leading number
+const numericValue = match ? parseFloat(match[0]) : 0;
+const suffix = match ? value.slice(match[0].length) : '';
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -885,7 +889,7 @@ const Services = () => {
     },
     {
       icon: <Star className="w-5 h-5 md:w-6 md:h-6" />,
-      number: "4/5",
+      number: "4.7/5",
       label: "Client Rating",
       color: "text-purple-600"
     }
