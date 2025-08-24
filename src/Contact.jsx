@@ -741,11 +741,28 @@ const Contact = () => {
               {/* Contact Information */}
               <div className="space-y-6 md:space-y-8">
                 <div>
-                  <h2 className={`text-2xl md:text-3xl font-bold text-slate-900 mb-4 md:mb-6 transition-all duration-700 ${contentLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '300ms' }}>Get in Touch</h2>
+                  {/* <h2 className={`text-2xl md:text-3xl font-bold text-slate-900 mb-4 md:mb-6 transition-all duration-700 ${contentLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '300ms' }}>Get in Touch</h2>
                   <p className={`text-slate-600 mb-6 md:mb-8 transition-all duration-700 ${contentLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '400ms' }}>
                     We're here to help you with your digital transformation journey. Whether you have a question about our services, 
                     need a quote, or want to discuss a potential project, our team is ready to assist you.
-                  </p>
+                  </p> */}
+                  <h2
+  className={`text-2xl md:text-3xl font-bold text-slate-900 mb-4 md:mb-6 transition-all duration-700 
+  text-center md:text-left ${contentLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+  style={{ transitionDelay: '300ms' }}
+>
+  Get in Touch
+</h2>
+
+<p
+  className={`text-slate-600 mb-6 md:mb-8 transition-all duration-700 
+  text-center md:text-left ${contentLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+  style={{ transitionDelay: '400ms' }}
+>
+  We're here to help you with your digital transformation journey. Whether you have a question about our services, 
+  need a quote, or want to discuss a potential project, our team is ready to assist you.
+</p>
+
                 </div>
 
                 {/* Contact Info Cards */}
