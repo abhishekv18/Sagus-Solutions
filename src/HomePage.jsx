@@ -945,7 +945,7 @@ const Home = () => {
       bgGradient: "from-blue-50 to-purple-50"
     },
     {
-      icon: "Smartphone",
+      icon: "Mobile",
       title: "Mobile Development",
       description: "Native and cross-platform mobile applications that engage users and scale your business across all devices.", 
       features: ["iOS & Android Native", "React Native & Flutter", "UI/UX Design", "App Store Optimization"],
