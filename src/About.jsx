@@ -622,7 +622,7 @@ const About = () => {
     },
     {
       name: "Sujal Mishra",
-      role: "Marketing Head",
+      role: "Marketing Head & App Developer",
       image: "/WhatsApp Image 2025-08-24 at 00.44.42_92c0c5a0.jpg",
       expertise: "Digital Marketing & Analytics",
       bio: "Data-driven marketing strategies that deliver results"
