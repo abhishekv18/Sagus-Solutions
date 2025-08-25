@@ -428,45 +428,48 @@ const Header = () => {
         </div>
 
         {/* Enhanced Mobile Navigation */}
-        <div className={`lg:hidden transition-all duration-500 ease-out overflow-hidden ${
-          isOpen ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'
-        }`}>
-          <div className="py-3 border-t border-slate-700/30">
-            <nav className="space-y-2">
-              {navItems.map((item) => (
-                <Link 
-                  key={item.path}
-                 to={item.path}
-                  className={`flex items-center w-full px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 group ${
-                    isActive(item.path) 
-                      ? 'text-teal-400 bg-slate-800/40' 
-                      : 'text-slate-300 hover:text-slate-50 hover:bg-slate-800/30'
-                  }`}
-                >
-                  <div className={`transition-transform duration-300 ${isActive(item.path) ? 'scale-110' : ''}`}>
-                    {item.icon}
-                  </div>
-                  <span className="ml-3 font-semibold">{item.label}</span>
-                  
-                  {isActive(item.path) && (
-                    <div className="ml-auto w-2 h-2 bg-teal-400 rounded-full animate-pulse"></div>
-                  )}
-                </Link>
-              ))}
-              
-              <div className="pt-3 border-t border-slate-700/30 mt-3">
-                <Link 
-                 to='/contact'
-                  className="flex items-center justify-center w-full px-4 py-3 bg-gradient-to-r from-teal-500 to-green-500 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-teal-500/30 hover:shadow-teal-500/40 text-sm md:text-base"
-                >
-                  {/* <Phone className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3" /> */}
-                  Get Proposal
-                    <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" />
-                </Link>
-              </div>
-            </nav>
+      {/* Enhanced Mobile Navigation */}
+<div className={`lg:hidden transition-all duration-500 ease-out overflow-hidden ${
+  isOpen ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'
+}`}>
+  <div className="py-3 border-t border-slate-700/30">
+    <nav className="space-y-2">
+      {navItems.map((item) => (
+        <Link 
+          key={item.path}
+          to={item.path}
+          onClick={() => handleNavClick(item.path)}   // ✅ Close menu on click
+          className={`flex items-center w-full px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 group ${
+            isActive(item.path) 
+              ? 'text-teal-400 bg-slate-800/40' 
+              : 'text-slate-300 hover:text-slate-50 hover:bg-slate-800/30'
+          }`}
+        >
+          <div className={`transition-transform duration-300 ${isActive(item.path) ? 'scale-110' : ''}`}>
+            {item.icon}
           </div>
-        </div>
+          <span className="ml-3 font-semibold">{item.label}</span>
+          
+          {isActive(item.path) && (
+            <div className="ml-auto w-2 h-2 bg-teal-400 rounded-full animate-pulse"></div>
+          )}
+        </Link>
+      ))}
+      
+      <div className="pt-3 border-t border-slate-700/30 mt-3">
+        <Link 
+          to='/contact'
+          onClick={() => handleNavClick('/contact')}   // ✅ Close menu on contact click
+          className="flex items-center justify-center w-full px-4 py-3 bg-gradient-to-r from-teal-500 to-green-500 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-teal-500/30 hover:shadow-teal-500/40 text-sm md:text-base"
+        >
+          Get Proposal
+          <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" />
+        </Link>
+      </div>
+    </nav>
+  </div>
+</div>
+
       </div>
     </header>
   );
