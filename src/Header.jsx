@@ -343,9 +343,9 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
             {navItems.map((item) => (
-              <button 
+              <Link 
                 key={item.path}
-                onClick={() => handleNavClick(item.path)}
+               to={item.path}
                 className={`relative flex items-center px-4 py-2.5 md:px-5 md:py-3 rounded-xl text-sm font-medium transition-all duration-300 group ${
                   isActive(item.path) 
                     ? 'text-teal-400' 
@@ -368,14 +368,15 @@ const Header = () => {
                 <div className={`absolute inset-0 bg-slate-800/40 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
                   activeHover === item.path ? 'opacity-100' : ''
                 }`}></div>
-              </button>
+              </Link>
             ))}
           </nav>
 
           {/* Enhanced Desktop Contact Button */}
           <div className="hidden lg:flex items-center">
-            <button 
-              onClick={() => handleNavClick('/contact')}
+            <Link 
+              to="/contact" 
+             
               className="relative flex items-center px-4 py-2.5 md:px-6 md:py-3 bg-gradient-to-r from-teal-500 to-green-500 hover:from-teal-400 hover:to-green-400 text-white text-sm font-semibold rounded-xl transition-all duration-300 group shadow-lg shadow-teal-500/30 hover:shadow-teal-500/40 overflow-hidden"
               onMouseEnter={() => setActiveHover('contact')}
               onMouseLeave={() => setActiveHover(null)}
@@ -389,14 +390,15 @@ const Header = () => {
               <div className={`absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform -translate-x-full group-hover:translate-x-full transition-transform duration-700 ${
                 activeHover === 'contact' ? 'translate-x-full' : ''
               }`}></div>
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Contact Button and Menu Toggle */}
           <div className="flex items-center space-x-2 lg:hidden">
             {/* Mobile Contact Button */}
-            <button 
-              onClick={() => handleNavClick('/contact')}
+            <Link 
+              to="/contact" 
+              
               className="relative flex items-center px-3 py-2 bg-gradient-to-r from-teal-500 to-green-500 hover:from-teal-400 hover:to-green-400 text-white text-sm font-semibold rounded-lg transition-all duration-300 group shadow-lg shadow-teal-500/30 hover:shadow-teal-500/40 overflow-hidden"
               onMouseEnter={() => setActiveHover('mobile-contact')}
               onMouseLeave={() => setActiveHover(null)}
@@ -408,7 +410,7 @@ const Header = () => {
               <div className={`absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform -translate-x-full group-hover:translate-x-full transition-transform duration-700 ${
                 activeHover === 'mobile-contact' ? 'translate-x-full' : ''
               }`}></div>
-            </button>
+            </Link>
 
             {/* Enhanced Mobile menu button */}
             <button
@@ -432,9 +434,9 @@ const Header = () => {
           <div className="py-3 border-t border-slate-700/30">
             <nav className="space-y-2">
               {navItems.map((item) => (
-                <button 
+                <Link 
                   key={item.path}
-                  onClick={() => handleNavClick(item.path)}
+                 to={item.path}
                   className={`flex items-center w-full px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 group ${
                     isActive(item.path) 
                       ? 'text-teal-400 bg-slate-800/40' 
@@ -449,18 +451,18 @@ const Header = () => {
                   {isActive(item.path) && (
                     <div className="ml-auto w-2 h-2 bg-teal-400 rounded-full animate-pulse"></div>
                   )}
-                </button>
+                </Link>
               ))}
               
               <div className="pt-3 border-t border-slate-700/30 mt-3">
-                <button 
-                  onClick={() => handleNavClick('/contact')}
+                <Link 
+                 to='/contact'
                   className="flex items-center justify-center w-full px-4 py-3 bg-gradient-to-r from-teal-500 to-green-500 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-teal-500/30 hover:shadow-teal-500/40 text-sm md:text-base"
                 >
                   {/* <Phone className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3" /> */}
                   Get Proposal
                     <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" />
-                </button>
+                </Link>
               </div>
             </nav>
           </div>
