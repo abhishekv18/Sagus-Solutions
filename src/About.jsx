@@ -597,7 +597,7 @@ const About = () => {
       name: "Gaurav Mishra",
       role: "CEO & Founder",
       image: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
-      expertise: "Digital Strategy & Leadership",
+      expertise: "Digital Strategy & Website Developer",
       bio: "3+ years transforming businesses through technology"
     },
     {
@@ -616,7 +616,7 @@ const About = () => {
     },
     {
       name: "Udit Mishra",
-      role: "Content Creator & App Developer",
+      role: "Content Creator & No Code Developer",
       image: "/WhatsApp Image 2025-08-23 at 21.32.33_5288d819.jpg",
       expertise: "Full-Stack Development & DevOps",
       bio: "Building robust solutions with modern technologies"
