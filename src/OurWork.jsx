@@ -1459,7 +1459,7 @@ const OurWork = () => {
         clients: "200+ restaurants",
         budget: "₹9,999",
       },
-      logo: "🍕",
+      
       gallery: [
         "/Screenshot 2025-08-24 001034.png",
         "/Screenshot 2025-08-24 001049.png",
@@ -1516,7 +1516,7 @@ const OurWork = () => {
         team: "5 professionals", 
         budget: "₹15,000",
       },
-      logo: "🤝",
+     
       gallery: [
         "/Screenshot 2025-08-24 002849.png",
         "/Screenshot 2025-08-24 002902.png",
@@ -1574,7 +1574,7 @@ const OurWork = () => {
         clients: "Global community",
         budget: "₹13,000",
       },
-      logo: "🧘",
+     
       gallery: [
         "/Screenshot 2025-08-24 003428.png",
         "/Screenshot 2025-08-24 003440.png",
@@ -1632,7 +1632,7 @@ const OurWork = () => {
         clients: "15K+ users",
         budget: "₹10,000",
       },
-      logo: "✨",
+     
       gallery: [
         "/Screenshot 2025-08-24 003902.png",
         "/Screenshot 2025-08-24 003902.png",
@@ -1690,7 +1690,7 @@ const OurWork = () => {
         clients: "100+ restaurant partners",
         budget: "₹18,000",
       },
-      logo: "🍴",
+      
       gallery: [
         "/WhatsApp Image 2025-08-23 at 22.57.20_1fa7b39d.jpg",
         "/WhatsApp Image 2025-08-23 at 22.57.21_6525abae.jpg",
@@ -1767,9 +1767,9 @@ const OurWork = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
         <div className="absolute bottom-3 left-3 md:bottom-4 md:left-4 text-white">
           <div className="flex items-center mb-1 md:mb-2">
-            <div className="w-8 h-8 md:w-10 md:h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center text-lg md:text-xl mr-2 md:mr-3">
+            {/* <div className="w-8 h-8 md:w-10 md:h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center text-lg md:text-xl mr-2 md:mr-3">
               {project.logo}
-            </div>
+            </div> */}
             <div>
               <h2 className="text-lg md:text-xl lg:text-2xl font-bold mb-0.5 md:mb-1">{project.title}</h2>
               <div className="flex flex-wrap items-center gap-1 md:gap-2">
@@ -2038,11 +2038,11 @@ const OurWork = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-teal-600 to-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   )}
                   
-                  <span className="relative z-10 mr-1 md:mr-2">{category.icon}</span>
+                  {/* <span className="relative z-10 mr-1 md:mr-2">{category.icon}</span> */}
                   <span className="relative z-10">{category.name}</span>
-                  <span className="relative z-10 ml-1 md:ml-2 px-1.5 py-0.5 md:px-2 md:py-1 bg-white/20 rounded-full text-xs">
+                  {/* <span className="relative z-10 ml-1 md:ml-2 px-1.5 py-0.5 md:px-2 md:py-1 bg-white/20 rounded-full text-xs">
                     {category.count}
-                  </span>
+                  </span> */}
                 </button>
               ))}
             </div>
@@ -2077,19 +2077,19 @@ const OurWork = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
                     {/* Project Logo with shine effect */}
-                    <div className="absolute top-2 md:top-3 left-2 md:left-3 w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-white/95 backdrop-blur-sm rounded-lg md:rounded-xl flex items-center justify-center text-lg md:text-xl lg:text-2xl shadow-lg group-hover:shadow-xl transition-all duration-500">
+                    {/* <div className="absolute top-2 md:top-3 left-2 md:left-3 w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-white/95 backdrop-blur-sm rounded-lg md:rounded-xl flex items-center justify-center text-lg md:text-xl lg:text-2xl shadow-lg group-hover:shadow-xl transition-all duration-500">
                       <div className="relative">
                         {project.logo}
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-12 transform -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                       </div>
-                    </div>
+                    </div> */}
 
                     {/* Category Badge */}
-                    <div className="absolute top-2 md:top-3 right-2 md:right-3">
+                    {/* <div className="absolute top-2 md:top-3 right-2 md:right-3">
                       <span className="px-2 py-1 md:px-3 md:py-1.5 bg-gradient-to-r from-teal-500 to-green-500 text-white text-xs font-semibold rounded-full shadow-lg group-hover:from-teal-600 group-hover:to-green-600 transition-colors duration-300">
                         {categories.find(cat => cat.id === project.category)?.name}
                       </span>
-                    </div>
+                    </div> */}
 
                     {/* Hover Overlay with action buttons */}
                     <div className="absolute inset-0 bg-gradient-to-br from-teal-500/95 to-green-500/95 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center space-x-2 md:space-x-3">
