@@ -272,10 +272,10 @@ const DiscountPopup = () => {
                 Ends in {formatTime(timeLeft)}
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-1">
-                20% OFF
+                15% OFF
               </h3>
               <p className="text-slate-600 text-xs leading-relaxed">
-                Get 20% discount on all services. Only {spotsLeft} spots remaining!
+                Get 15% discount on all services. Only {spotsLeft} spots remaining!
               </p>
             </div>
 
