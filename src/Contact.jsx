@@ -1043,7 +1043,7 @@ const Contact = () => {
               </p>
              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center relative z-10">
 <a 
-  href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Quick+Meeting+with+Sagus+Solutions&details=Let's+connect+for+a+10+minute+discussion.&dates=20250824T090000Z/20250824T091000Z&location=Online&add=sagussolutions@gmail.com"
+  href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Quick+Meeting+with+Sagus+Solutions&details=Let's+connect+for+a+10+minute+discussion.&dates=20250824T090000Z/20250824T091000Z&location=Online&add=sagus.solutions@sagussolutions.info"
   target="_blank"
   rel="noopener noreferrer"
 >
