@@ -395,7 +395,7 @@ const DiscountPopup = () => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-70 animate-fadeIn">
-      <div className="relative bg-white rounded-xl shadow-2xl w-full max-w-xs sm:max-w-sm md:max-w-md overflow-hidden animate-scaleIn">
+      <div className="relative bg-white rounded-xl shadow-2xl w-full max-w-xs sm:max-w-sm overflow-hidden animate-scaleIn">
         {/* Close Button */}
         <button
           onClick={closePopup}
@@ -408,7 +408,7 @@ const DiscountPopup = () => {
         {/* Content */}
         <div className="flex flex-col">
           {/* Header */}
-          <div className="relative h-24 sm:h-26 md:h-28 bg-gradient-to-r from-teal-500 via-green-500 to-blue-600 overflow-hidden">
+          <div className="relative h-24 sm:h-26 bg-gradient-to-r from-teal-500 via-green-500 to-blue-600 overflow-hidden">
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-white text-center px-4">
                 <div className="flex justify-center mb-3">
