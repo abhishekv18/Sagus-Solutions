@@ -659,7 +659,7 @@ const Contact = () => {
     {
       icon: <Mail className="w-5 h-5 md:w-6 md:h-6 text-teal-600" />,
       title: "Email Address",
-      details: "sagussolutions@gmail.com",
+      details: "sagus.solutions@sagussolutions.info",
       description: "Send us an email anytime"
     },
     {
@@ -1007,8 +1007,8 @@ const Contact = () => {
                       <Mail className="w-5 h-5 md:w-6 md:h-6 text-teal-600 mr-2 md:mr-3 flex-shrink-0" />
                       <div>
                         <p className="font-semibold text-sm md:text-base">Email Address</p>
-                        <a href="mailto:sagussolutions@gmail.com" className="text-slate-300 hover:text-teal-400 transition-colors duration-300 text-sm md:text-base">
-                          sagussolutions@gmail.com
+                        <a href="mailto:sagus.solutions@sagussolutions.info" className="text-slate-300 hover:text-teal-400 transition-colors duration-300 text-sm md:text-base">
+                          sagus.solutions@sagussolutions.info
                         </a>
                         <p className="text-slate-300 text-xs md:text-sm">Send us an email anytime</p>
                       </div>

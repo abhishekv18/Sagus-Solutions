@@ -574,8 +574,8 @@ const HomeProjects = () => {
       </div>
       
       {/* Decorative elements */}
-      <div className="absolute left-10 md:left-1/4 mt-12 md:mt-16 w-4 h-4 md:w-5 md:h-5 bg-gradient-to-br from-teal-200 to-teal-300 rounded-full shadow-sm animate-pulse opacity-50"></div>
-      <div className="absolute right-10 md:right-1/4 mt-16 md:mt-24 w-3 h-3 md:w-4 md:h-4 bg-gradient-to-br from-green-200 to-green-300 rounded-full shadow-sm animate-bounce opacity-50" style={{ animationDelay: '0.5s' }}></div>
+      {/* <div className="absolute left-10 md:left-1/4 mt-12 md:mt-16 w-4 h-4 md:w-5 md:h-5 bg-gradient-to-br from-teal-200 to-teal-300 rounded-full shadow-sm animate-pulse opacity-50"></div>
+      <div className="absolute right-10 md:right-1/4 mt-16 md:mt-24 w-3 h-3 md:w-4 md:h-4 bg-gradient-to-br from-green-200 to-green-300 rounded-full shadow-sm animate-bounce opacity-50" style={{ animationDelay: '0.5s' }}></div> */}
     </section>
   );
 };

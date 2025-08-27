@@ -1475,9 +1475,9 @@ const Home = () => {
         </div>
 
         {/* Decorative elements */}
-        <div className="absolute left-10 md:left-20 mt-8 w-4 h-4 md:w-6 md:h-6 bg-gradient-to-br from-teal-300 to-teal-400 rounded-full shadow-lg animate-pulse opacity-60"></div>
+        {/* <div className="absolute left-10 md:left-20 mt-8 w-4 h-4 md:w-6 md:h-6 bg-gradient-to-br from-teal-300 to-teal-400 rounded-full shadow-lg animate-pulse opacity-60"></div>
         <div className="absolute right-12 md:right-24 mt-12 md:mt-16 w-3 h-3 md:w-4 md:h-4 bg-gradient-to-br from-green-300 to-green-400 rounded-full shadow-md animate-bounce opacity-60" style={{ animationDelay: '0.7s' }}></div>
-        <div className="absolute left-1/3 bottom-16 md:bottom-20 w-4 h-4 md:w-5 md:h-5 bg-gradient-to-br from-blue-300 to-blue-400 rounded-full shadow-lg animate-ping opacity-40" style={{ animationDelay: '1.2s' }}></div>
+        <div className="absolute left-1/3 bottom-16 md:bottom-20 w-4 h-4 md:w-5 md:h-5 bg-gradient-to-br from-blue-300 to-blue-400 rounded-full shadow-lg animate-ping opacity-40" style={{ animationDelay: '1.2s' }}></div> */}
       </section>
     
       {/* Process Section */}
@@ -1534,8 +1534,8 @@ const Home = () => {
           </div>
           
           {/* Decorative elements to match the banner style */}
-          <div className="absolute left-1/4 mt-12 md:mt-16 w-4 h-4 md:w-5 md:h-5 bg-gradient-to-br from-teal-400/50 to-teal-500/50 rounded-full shadow-sm animate-pulse"></div>
-          <div className="absolute right-1/4 mt-16 md:mt-24 w-3 h-3 md:w-4 md:h-4 bg-gradient-to-br from-green-400/50 to-green-500/50 rounded-full shadow-sm animate-bounce" style={{ animationDelay: '0.5s' }}></div>
+          {/* <div className="absolute left-1/4 mt-12 md:mt-16 w-4 h-4 md:w-5 md:h-5 bg-gradient-to-br from-teal-400/50 to-teal-500/50 rounded-full shadow-sm animate-pulse"></div>
+          <div className="absolute right-1/4 mt-16 md:mt-24 w-3 h-3 md:w-4 md:h-4 bg-gradient-to-br from-green-400/50 to-green-500/50 rounded-full shadow-sm animate-bounce" style={{ animationDelay: '0.5s' }}></div> */}
         </div>
       </section>
      
@@ -1563,7 +1563,7 @@ const Home = () => {
                 <div key={index} className="w-full flex-shrink-0 px-3 md:px-4">
                   <div className="bg-white/90 backdrop-blur-sm rounded-xl md:rounded-2xl shadow-lg p-6 md:p-8 lg:p-12 border border-slate-100/50 relative">
                     {/* Gradient border effect */}
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-teal-400 to-green-400 rounded-xl md:rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+                    {/* <div className="absolute -inset-0.5 bg-gradient-to-r from-teal-400 to-green-400 rounded-xl md:rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500 -z-10"></div> */}
                     
                     <div className="flex items-start mb-4 md:mb-6">
                       <Quote className="w-6 h-6 md:w-8 md:h-8 text-teal-500/30 mr-3 md:mr-4 flex-shrink-0" />
@@ -1594,8 +1594,8 @@ const Home = () => {
                     </div>
                     
                     {/* Decorative corner elements */}
-                    <div className="absolute top-3 md:top-4 right-3 md:right-4 w-2 h-2 md:w-3 md:h-3 border-t-2 border-r-2 border-teal-400/50 rounded-tr-lg"></div>
-                    <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4 w-2 h-2 md:w-3 md:h-3 border-b-2 border-l-2 border-teal-400/50 rounded-bl-lg"></div>
+                    {/* <div className="absolute top-3 md:top-4 right-3 md:right-4 w-2 h-2 md:w-3 md:h-3 border-t-2 border-r-2 border-teal-400/50 rounded-tr-lg"></div>
+                    <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4 w-2 h-2 md:w-3 md:h-3 border-b-2 border-l-2 border-teal-400/50 rounded-bl-lg"></div> */}
                   </div>
                 </div>
               ))}
@@ -1632,8 +1632,8 @@ const Home = () => {
         </div>
         
         {/* Decorative elements to match the banner style */}
-        <div className="absolute left-1/4 mt-12 md:mt-16 w-4 h-4 md:w-5 md:h-5 bg-gradient-to-br from-teal-200 to-teal-300 rounded-full shadow-sm animate-pulse opacity-50"></div>
-        <div className="absolute right-1/4 mt-16 md:mt-24 w-3 h-3 md:w-4 md:h-4 bg-gradient-to-br from-green-200 to-green-300 rounded-full shadow-sm animate-bounce opacity-50" style={{ animationDelay: '0.5s' }}></div>
+        {/* <div className="absolute left-1/4 mt-12 md:mt-16 w-4 h-4 md:w-5 md:h-5 bg-gradient-to-br from-teal-200 to-teal-300 rounded-full shadow-sm animate-pulse opacity-50"></div>
+        <div className="absolute right-1/4 mt-16 md:mt-24 w-3 h-3 md:w-4 md:h-4 bg-gradient-to-br from-green-200 to-green-300 rounded-full shadow-sm animate-bounce opacity-50" style={{ animationDelay: '0.5s' }}></div> */}
       </section>
     
       {/* CTA Section */}
