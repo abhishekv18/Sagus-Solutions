@@ -883,7 +883,7 @@ const Services = () => {
     },
     {
       icon: <Clock className="w-5 h-5 md:w-6 md:h-6" />,
-      number: "1.5+",
+      number: "3+",
       label: "Years Experience",
       color: "text-blue-600"
     },
