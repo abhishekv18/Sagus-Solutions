@@ -717,109 +717,212 @@ const Services = () => {
     return () => observer.disconnect();
   }, []);
 
-  const services = [
-    {
-      icon: <Code className="w-6 h-6 md:w-8 md:h-8" />,
-      title: "Web Development",
-      description: "Cutting-edge web applications built with modern frameworks, optimized for performance, scalability, and user experience.",
-      features: [
-        "React & Next.js Development",
-        "Progressive Web Apps",
-        "E-commerce Platforms",
-        "Custom CMS Solutions",
-        "API Development & Integration"
-      ],
-      color: "from-teal-500 to-teal-600",
-      stats: "11+",
-      metric: "Projects Delivered",
-      category: "development",
-      price: "Starting at ₹3,999"
-    },
-    {
-      icon: <Palette className="w-6 h-6 md:w-8 md:h-8" />,
-      title: "UI/UX Design",
-      description: "Strategic design solutions that combine aesthetic excellence with user psychology to drive engagement and conversions.",
-      features: [
-        "User Research & Analysis",
-        "Design Systems & Style Guides",
-        "Interactive Prototyping",
-        "Usability Testing",
-        "Brand Identity Design"
-      ],
-      color: "from-green-500 to-green-600",
-      stats: "98%",
-      metric: "Client Satisfaction",
-      category: "design",
-      price: "Starting at ₹1,999"
-    },
-    {
-      icon: <Smartphone className="w-6 h-6 md:w-8 md:h-8" />,
-      title: "Mobile App Development",
-      description: "Native and hybrid mobile solutions that deliver exceptional performance across iOS and Android platforms.",
-      features: [
-        "Native iOS & Android Apps",
-        "Cross-platform Development",
-        "App Store Optimization",
-        "Push Notification Systems",
-        "In-app Payment Integration"
-      ],
-      color: "from-blue-500 to-blue-600",
-      stats: "5+",
-      metric: "Apps in Store",
-      category: "development",
-      price: "Starting at ₹4,499"
-    },
-    {
-      icon: <MessageCircle className="w-6 h-6 md:w-8 md:h-8" />,
-      title: "AI Chatbots",
-      description: "Intelligent conversational AI that provides instant customer support, lead qualification, and seamless user interactions.",
-      features: [
-        "Natural Language Processing",
-        "Multi-channel Integration",
-        "Sentiment Analysis",
-        "Live Chat Handoff",
-        "Analytics & Insights"
-      ],
-      color: "from-purple-500 to-purple-600",
-      stats: "24/7",
-      metric: "Automated Support",
-      category: "ai",
-      price: "Starting at ₹3,999"
-    },
-    {
-      icon: <Bot className="w-6 h-6 md:w-8 md:h-8" />,
-      title: "AI Automation",
-      description: "Custom AI agents that streamline business processes, reduce operational costs, and enhance productivity.",
-      features: [
-        "Process Automation",
-        "Workflow Optimization",
-        "Data Processing & Analysis",
-        "Predictive Analytics",
-        "Custom AI Solutions"
-      ],
-      color: "from-indigo-500 to-indigo-600",
-      stats: "85%",
-      metric: "Efficiency Increase",
-      category: "ai",
-      price: "Starting at ₹3,999"
-    },
-    {
-      icon: <Video className="w-6 h-6 md:w-8 md:h-8" />,
-      title: "Video Production",
-      description: "Professional video content that captivates audiences and drives engagement across all digital platforms.",
-      features: [
-        "Corporate Video Production – Professional video & photo shoots for your business",
-        "Engaging visuals for reels and promos",
-        "Editing – Flawless edits for videos and photos",
-        "Video Marketing Strategy – Create impactful reels and campaigns for growth"
-      ],
-      color: "from-red-500 to-red-600",
-      stats: "4K+",
-      metric: "Ultra HD Quality",
-      category: "content",
-      price: "Starting at ₹1,999"
-    },
-  ];
+  // const services = [
+  //   {
+  //     icon: <Code className="w-6 h-6 md:w-8 md:h-8" />,
+  //     title: "Web Development",
+  //     description: "Cutting-edge web applications built with modern frameworks, optimized for performance, scalability, and user experience.",
+  //     features: [
+  //       "React & Next.js Development",
+  //       "Progressive Web Apps",
+  //       "E-commerce Platforms",
+  //       "Custom CMS Solutions",
+  //       "API Development & Integration"
+  //     ],
+  //     color: "from-teal-500 to-teal-600",
+  //     stats: "11+",
+  //     metric: "Projects Delivered",
+  //     category: "development",
+  //     price: "Starting at ₹3,999"
+  //   },
+  //   {
+  //     icon: <Palette className="w-6 h-6 md:w-8 md:h-8" />,
+  //     title: "UI/UX Design",
+  //     description: "Strategic design solutions that combine aesthetic excellence with user psychology to drive engagement and conversions.",
+  //     features: [
+  //       "User Research & Analysis",
+  //       "Design Systems & Style Guides",
+  //       "Interactive Prototyping",
+  //       "Usability Testing",
+  //       "Brand Identity Design"
+  //     ],
+  //     color: "from-green-500 to-green-600",
+  //     stats: "98%",
+  //     metric: "Client Satisfaction",
+  //     category: "design",
+  //     price: "Starting at ₹1,999"
+  //   },
+  //   {
+  //     icon: <Smartphone className="w-6 h-6 md:w-8 md:h-8" />,
+  //     title: "Mobile App Development",
+  //     description: "Native and hybrid mobile solutions that deliver exceptional performance across iOS and Android platforms.",
+  //     features: [
+  //       "Native iOS & Android Apps",
+  //       "Cross-platform Development",
+  //       "App Store Optimization",
+  //       "Push Notification Systems",
+  //       "In-app Payment Integration"
+  //     ],
+  //     color: "from-blue-500 to-blue-600",
+  //     stats: "5+",
+  //     metric: "Apps in Store",
+  //     category: "development",
+  //     price: "Starting at ₹4,499"
+  //   },
+  //   {
+  //     icon: <MessageCircle className="w-6 h-6 md:w-8 md:h-8" />,
+  //     title: "AI Chatbots",
+  //     description: "Intelligent conversational AI that provides instant customer support, lead qualification, and seamless user interactions.",
+  //     features: [
+  //       "Natural Language Processing",
+  //       "Multi-channel Integration",
+  //       "Sentiment Analysis",
+  //       "Live Chat Handoff",
+  //       "Analytics & Insights"
+  //     ],
+  //     color: "from-purple-500 to-purple-600",
+  //     stats: "24/7",
+  //     metric: "Automated Support",
+  //     category: "ai",
+  //     price: "Starting at ₹3,999"
+  //   },
+  //   {
+  //     icon: <Bot className="w-6 h-6 md:w-8 md:h-8" />,
+  //     title: "AI Automation",
+  //     description: "Custom AI agents that streamline business processes, reduce operational costs, and enhance productivity.",
+  //     features: [
+  //       "Process Automation",
+  //       "Workflow Optimization",
+  //       "Data Processing & Analysis",
+  //       "Predictive Analytics",
+  //       "Custom AI Solutions"
+  //     ],
+  //     color: "from-indigo-500 to-indigo-600",
+  //     stats: "85%",
+  //     metric: "Efficiency Increase",
+  //     category: "ai",
+  //     price: "Starting at ₹3,999"
+  //   },
+  //   {
+  //     icon: <Video className="w-6 h-6 md:w-8 md:h-8" />,
+  //     title: "Video Production",
+  //     description: "Professional video content that captivates audiences and drives engagement across all digital platforms.",
+  //     features: [
+  //       "Corporate Video Production – Professional video & photo shoots for your business",
+  //       "Engaging visuals for reels and promos",
+  //       "Editing – Flawless edits for videos and photos",
+  //       "Video Marketing Strategy – Create impactful reels and campaigns for growth"
+  //     ],
+  //     color: "from-red-500 to-red-600",
+  //     stats: "4K+",
+  //     metric: "Ultra HD Quality",
+  //     category: "content",
+  //     price: "Starting at ₹1,999"
+  //   },
+  // ];
+const services = [
+  {
+    icon: <Code className="w-6 h-6 md:w-8 md:h-8" />,
+    title: "Web Development",
+    description: "Cutting-edge web applications built with modern frameworks, optimized for performance, scalability, and user experience.",
+    features: [
+      "React & Next.js Development",
+      "Progressive Web Apps",
+      "E-commerce Platforms",
+      "Custom CMS Solutions",
+      "API Development & Integration"
+    ],
+    color: "from-teal-500 to-teal-600",
+    stats: "11+",
+    metric: "Projects Delivered",
+    category: "development",
+    price: "20% Off Market Rate"
+  },
+  {
+    icon: <Palette className="w-6 h-6 md:w-8 md:h-8" />,
+    title: "UI/UX Design",
+    description: "Strategic design solutions that combine aesthetic excellence with user psychology to drive engagement and conversions.",
+    features: [
+      "User Research & Analysis",
+      "Design Systems & Style Guides",
+      "Interactive Prototyping",
+      "Usability Testing",
+      "Brand Identity Design"
+    ],
+    color: "from-green-500 to-green-600",
+    stats: "98%",
+    metric: "Client Satisfaction",
+    category: "design",
+    price: "15% Off Market Rate"
+  },
+  {
+    icon: <Smartphone className="w-6 h-6 md:w-8 md:h-8" />,
+    title: "Mobile App Development",
+    description: "Native and hybrid mobile solutions that deliver exceptional performance across iOS and Android platforms.",
+    features: [
+      "Native iOS & Android Apps",
+      "Cross-platform Development",
+      "App Store Optimization",
+      "Push Notification Systems",
+      "In-app Payment Integration"
+    ],
+    color: "from-blue-500 to-blue-600",
+    stats: "5+",
+    metric: "Apps in Store",
+    category: "development",
+    price: "20% Off Market Rate"
+  },
+  {
+    icon: <MessageCircle className="w-6 h-6 md:w-8 md:h-8" />,
+    title: "AI Chatbots",
+    description: "Intelligent conversational AI that provides instant customer support, lead qualification, and seamless user interactions.",
+    features: [
+      "Natural Language Processing",
+      "Multi-channel Integration",
+      "Sentiment Analysis",
+      "Live Chat Handoff",
+      "Analytics & Insights"
+    ],
+    color: "from-purple-500 to-purple-600",
+    stats: "24/7",
+    metric: "Automated Support",
+    category: "ai",
+    price: "15% Off Market Rate"
+  },
+  {
+    icon: <Bot className="w-6 h-6 md:w-8 md:h-8" />,
+    title: "AI Automation",
+    description: "Custom AI agents that streamline business processes, reduce operational costs, and enhance productivity.",
+    features: [
+      "Process Automation",
+      "Workflow Optimization",
+      "Data Processing & Analysis",
+      "Predictive Analytics",
+      "Custom AI Solutions"
+    ],
+    color: "from-indigo-500 to-indigo-600",
+    stats: "85%",
+    metric: "Efficiency Increase",
+    category: "ai",
+    price: "20% Off Market Rate"
+  },
+  {
+    icon: <Video className="w-6 h-6 md:w-8 md:h-8" />,
+    title: "Video Production",
+    description: "Professional video content that captivates audiences and drives engagement across all digital platforms.",
+    features: [
+      "Corporate Video Production – Professional video & photo shoots for your business",
+      "Engaging visuals for reels and promos",
+      "Editing – Flawless edits for videos and photos",
+      "Video Marketing Strategy – Create impactful reels and campaigns for growth"
+    ],
+    color: "from-red-500 to-red-600",
+    stats: "4K+",
+    metric: "Ultra HD Quality",
+    category: "content",
+    price: "15% Off Market Rate"
+  },
+];
 
   const serviceCategories = [
     {
@@ -1193,7 +1296,7 @@ const Services = () => {
             </Link>
           </div>
           
-          <div className="mt-8 md:mt-10 lg:mt-12">
+          {/* <div className="mt-8 md:mt-10 lg:mt-12">
             <button 
               onClick={downloadQuotation}
               className="inline-flex items-center px-5 py-2.5 md:px-6 md:py-3 bg-gradient-to-r from-blue-400 to-indigo-500 text-white font-semibold rounded-lg md:rounded-xl hover:from-blue-300 hover:to-indigo-400 transition-all duration-300 shadow-lg shadow-blue-400/25 hover:shadow-xl hover:shadow-blue-400/30 text-sm md:text-base"
@@ -1201,7 +1304,7 @@ const Services = () => {
               <Download className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
               Download Quotation Template
             </button>
-          </div>
+          </div> */}
         </div>
       </section>
       

@@ -632,10 +632,10 @@ const About = () => {
  const teamMembers = [
     {
       name: "Gaurav Mishra",
-      role: "CEO & Founder",
+      role: "Certified Business Analyst & Client Relations",
       image: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
       expertise: "Digital Strategy & Website Developer",
-      bio: "3+ years transforming businesses through technology"
+      bio: "5+ years transforming businesses through technology"
     },
     {
       name: "Shrish Agrawal",
