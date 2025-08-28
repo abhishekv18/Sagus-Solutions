@@ -184,13 +184,13 @@ const ClientLogos = () => {
     {
       id: 3,
       name: "Client 3",
-      logo: "/WhatsApp Image 2025-08-29 at 01.22.41_55aaadfb.jpg", // Replace with your actual logo path
+      logo: "/WhatsApp Image 2025-08-29 at 01.22.41_ca37cac5.jpg", // Replace with your actual logo path
     },
-    {
+     {
       id: 4,
       name: "Client 4",
-      logo: "/WhatsApp Image 2025-08-29 at 01.22.41_ca37cac5.jpg", // Replace with your actual logo path
-    }
+      logo: "/WhatsApp Image 2025-08-29 at 01.22.41_55aaadfb.jpg", // Replace with your actual logo path
+    },
   ];
 
   // Auto-scroll effect
