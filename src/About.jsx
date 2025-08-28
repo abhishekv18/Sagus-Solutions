@@ -548,7 +548,7 @@ const About = () => {
             animateCounter(26, 'projects', 2000);
             animateCounter(98, 'satisfaction', 2000);
             animateCounter(50, 'technologies', 2000);
-            animateCounter(3, 'users', 2000);
+            animateCounter(10, 'users', 2000);
           }
         });
       },
