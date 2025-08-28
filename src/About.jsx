@@ -592,7 +592,44 @@ const About = () => {
     requestAnimationFrame(updateCounter);
   };
 
-  const teamMembers = [
+  // const teamMembers = [
+  //   {
+  //     name: "Gaurav Mishra",
+  //     role: "CEO & Founder",
+  //     image: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+  //     expertise: "Digital Strategy & Website Developer",
+  //     bio: "3+ years transforming businesses through technology"
+  //   },
+  //   {
+  //     name: "Shrish Agrawal",
+  //     role: "A.I & ML Specialist",
+  //     image: "/WhatsApp Image 2025-08-24 at 00.47.03_dc1c7e13.jpg",
+  //     expertise: "Technology Architecture & Innovation",
+  //     bio: "Expert in scalable systems and emerging technologies"
+  //   },
+  //   {
+  //     name: "Abhishek Agrawal",
+  //     role: "Full Stack Developer",
+  //     image: "/WhatsApp Image 2024-04-27 at 17.33.55_b101b408.jpg",
+  //     expertise: "UI/UX Design & Brand Strategy",
+  //     bio: "Award-winning designer with global experience"
+  //   },
+  //   {
+  //     name: "Udit Mishra",
+  //     role: "Content Creator & No Code Developer",
+  //     image: "/WhatsApp Image 2025-08-23 at 21.32.33_5288d819.jpg",
+  //     expertise: "Full-Stack Development & DevOps",
+  //     bio: "Building robust solutions with modern technologies"
+  //   },
+  //   {
+  //     name: "Sujal Mishra",
+  //     role: "Marketing Head & App Developer",
+  //     image: "/WhatsApp Image 2025-08-24 at 00.44.42_92c0c5a0.jpg",
+  //     expertise: "Digital Marketing & Analytics",
+  //     bio: "Data-driven marketing strategies that deliver results"
+  //   }
+  // ];
+ const teamMembers = [
     {
       name: "Gaurav Mishra",
       role: "CEO & Founder",
@@ -627,9 +664,15 @@ const About = () => {
       image: "/WhatsApp Image 2025-08-24 at 00.44.42_92c0c5a0.jpg",
       expertise: "Digital Marketing & Analytics",
       bio: "Data-driven marketing strategies that deliver results"
+    },
+    {
+      name: "Rohit Kumar",
+      role: "Certified Business Analyst",
+      image: "/WhatsApp Image 2025-08-28 at 23.17.07_cc9e3ad9.jpg", // Replace with actual image
+      expertise: "Client Relations & Business Analysis",
+      bio: "5+ years of experience in client handling and business analysis"
     }
   ];
-
   const values = [
     {
       icon: <Target className="w-6 h-6 md:w-8 md:h-8" />,
@@ -788,7 +831,7 @@ const About = () => {
                     <Zap className="w-4 h-4 md:w-6 md:h-6" />
                   </div>
                   <span className="text-slate-700 font-semibold text-sm md:text-base">Innovation-Driven Solutions</span>
-                  <ChevronRight className="w-4 h-4 md:w-5 md:h-5 text-slate-400 ml-auto" />
+                  {/* <ChevronRight className="w-4 h-4 md:w-5 md:h-5 text-slate-400 ml-auto" /> */}
                 </div>
                 
                 <div className="flex items-center space-x-3 md:space-x-4 p-3 md:p-4 bg-white/60 backdrop-blur-sm rounded-xl md:rounded-2xl border border-white/20 hover:bg-white/80 transition-all duration-300">
@@ -796,7 +839,7 @@ const About = () => {
                     <Target className="w-4 h-4 md:w-6 md:h-6" />
                   </div>
                   <span className="text-slate-700 font-semibold text-sm md:text-base">Results-Focused Approach</span>
-                  <ChevronRight className="w-4 h-4 md:w-5 md:h-5 text-slate-400 ml-auto" />
+                  {/* <ChevronRight className="w-4 h-4 md:w-5 md:h-5 text-slate-400 ml-auto" /> */}
                 </div>
               </div>
             </div>
@@ -912,7 +955,7 @@ const About = () => {
                   <img 
                     src={teamMembers[0].image} 
                     alt={teamMembers[0].name}
-                    className="relative w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full object-cover shadow-xl md:shadow-2xl group-hover:scale-105 transition-all duration-500 border-4 border-white"
+                    className="relative w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-full object-cover shadow-xl md:shadow-2xl group-hover:scale-105 transition-all duration-500 border-4 border-white"
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-teal-400/20 via-green-400/20 to-teal-400/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
@@ -926,7 +969,7 @@ const About = () => {
             </div>
 
             {/* Next four members in grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 justify-items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 lg:gap-10 justify-items-center">
               {teamMembers.slice(1).map((member, index) => (
                 <div key={index} className="group text-center">
                   <div className="relative mb-4 md:mb-6 mx-auto w-fit">
@@ -934,7 +977,7 @@ const About = () => {
                     <img 
                       src={member.image} 
                       alt={member.name}
-                      className="relative w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full object-cover shadow-xl md:shadow-2xl group-hover:scale-105 transition-all duration-500 border-4 border-white"
+                      className="relative w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-full object-cover shadow-xl md:shadow-2xl group-hover:scale-105 transition-all duration-500 border-4 border-white"
                     />
                     <div className="absolute inset-0 bg-gradient-to-br from-teal-400/20 via-green-400/20 to-teal-400/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </div>

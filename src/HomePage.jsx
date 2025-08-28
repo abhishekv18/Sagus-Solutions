@@ -892,6 +892,7 @@ import Footer from './Footer';
 import HomeProjects from './HomeProjects';
 import { Link } from 'react-router-dom';
 import { Helmet } from "react-helmet";
+import ClientLogos from './ClientLogo';
 
 const Home = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -1320,7 +1321,7 @@ const Home = () => {
           }
         `}</style>
       </section>
-     
+     <ClientLogos/>
       {/* Services Section */}
       <section className="relative py-16 md:py-24 px-5 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-slate-100 overflow-hidden" ref={sectionRef}>
         {/* Background decorative elements */}

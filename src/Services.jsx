@@ -877,7 +877,7 @@ const Services = () => {
     },
     {
       icon: <Users className="w-5 h-5 md:w-6 md:h-6" />,
-      number: "17+",
+      number: "20+",
       label: "Happy Clients",
       color: "text-green-600"
     },

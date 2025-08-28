@@ -683,7 +683,7 @@ const Contact = () => {
     },
     {
       icon: <Linkedin className="w-4 h-4 md:w-5 md:h-5" />,
-      url: "https://www.linkedin.com/in/sagus-solutions-8030b0380/",
+      url: "https://www.linkedin.com/company/sagus-solutions/",
       name: "LinkedIn"
     },
     {

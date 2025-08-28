@@ -666,7 +666,7 @@ const DiscountPopup = () => {
                     <Star key={i} className="w-3 h-3 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <span className="ml-1">17+ happy clients</span>
+                <span className="ml-1">20+ happy clients</span>
               </div>
             </div>
           </div>

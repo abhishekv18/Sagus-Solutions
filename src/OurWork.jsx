@@ -2200,7 +2200,7 @@ const OurWork = () => {
                 { value: "26+", label: "Projects Completed", color: "teal", icon: <Code className="w-5 h-5 md:w-6 md:h-6" /> },
                 { value: statsValues.satisfaction, label: "Client Satisfaction", color: "green", icon: <Award className="w-5 h-5 md:w-6 md:h-6" /> },
                 { value: statsValues.technologies, label: "Technologies Used", color: "blue", icon: <Cpu className="w-5 h-5 md:w-6 md:h-6" /> },
-                { value: "3K+", label: "Users Served", color: "purple", icon: <Users className="w-5 h-5 md:w-6 md:h-6" /> }
+                { value: "10K+", label: "Users Served", color: "purple", icon: <Users className="w-5 h-5 md:w-6 md:h-6" /> }
               ].map((stat, index) => (
                 <div 
                   key={index}

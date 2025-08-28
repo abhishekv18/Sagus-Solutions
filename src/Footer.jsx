@@ -259,7 +259,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: <Facebook className="w-4 h-4 md:w-5 md:h-5" />, url: 'https://www.facebook.com/share/1B6jEFiA1S/', name: 'Facebook' },
     { icon: <X className="w-4 h-4 md:w-5 md:h-5" />, url: 'https://x.com/SagusSolut39764', name: 'Twitter' },
-    { icon: <Linkedin className="w-4 h-4 md:w-5 md:h-5" />, url: 'https://www.linkedin.com/in/sagus-solutions-8030b0380/', name: 'LinkedIn' },
+    { icon: <Linkedin className="w-4 h-4 md:w-5 md:h-5" />, url: 'https://www.linkedin.com/company/sagus-solutions/', name: 'LinkedIn' },
     { icon: <Instagram className="w-4 h-4 md:w-5 md:h-5" />, url: 'https://www.instagram.com/sagus_solutions?igsh=cHBvNjV3NnpyN3U4', name: 'Instagram' },
   ];
 
