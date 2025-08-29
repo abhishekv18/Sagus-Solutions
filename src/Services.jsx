@@ -974,19 +974,19 @@ const services = [
   const stats = [
     {
       icon: <Award className="w-5 h-5 md:w-6 md:h-6" />,
-      number: "26+",
+      number: "50+",
       label: "Projects Completed",
       color: "text-teal-600"
     },
     {
       icon: <Users className="w-5 h-5 md:w-6 md:h-6" />,
-      number: "20+",
+      number: "45+",
       label: "Happy Clients",
       color: "text-green-600"
     },
     {
       icon: <Clock className="w-5 h-5 md:w-6 md:h-6" />,
-      number: "3+",
+      number: "3.5+",
       label: "Years Experience",
       color: "text-blue-600"
     },

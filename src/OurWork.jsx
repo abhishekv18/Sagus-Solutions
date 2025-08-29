@@ -1457,7 +1457,7 @@ const OurWork = () => {
         duration: "5 months", 
         team: "6 professionals", 
         clients: "200+ restaurants",
-        budget: "₹9,999",
+      
       },
       
       gallery: [
@@ -1514,7 +1514,8 @@ const OurWork = () => {
       stats: { 
         duration: "4 months", 
         team: "5 professionals", 
-        budget: "₹15,000",
+        clients: "NGOs",
+      
       },
      
       gallery: [
@@ -1572,7 +1573,7 @@ const OurWork = () => {
         duration: "3 months", 
         team: "4 professionals", 
         clients: "Global community",
-        budget: "₹13,000",
+      
       },
      
       gallery: [
@@ -1630,7 +1631,7 @@ const OurWork = () => {
         duration: "6 months", 
         team: "7 professionals", 
         clients: "15K+ users",
-        budget: "₹10,000",
+    
       },
      
       gallery: [
@@ -1688,7 +1689,7 @@ const OurWork = () => {
         duration: "7 months", 
         team: "8 professionals", 
         clients: "100+ restaurant partners",
-        budget: "₹18,000",
+      
       },
       
       gallery: [
@@ -1822,10 +1823,10 @@ const OurWork = () => {
                   <div className="text-xs text-slate-500 mb-1">Team Size</div>
                   <div className="font-semibold text-sm">{project.stats.team}</div>
                 </div>
-                <div className="bg-slate-50 rounded-lg p-2 md:p-3">
+                {/* <div className="bg-slate-50 rounded-lg p-2 md:p-3">
                   <div className="text-xs text-slate-500 mb-1">Budget</div>
                   <div className="font-semibold text-sm">{project.stats.budget}</div>
-                </div>
+                </div> */}
                 <div className="bg-slate-50 rounded-lg p-2 md:p-3">
                   <div className="text-xs text-slate-500 mb-1">Users</div>
                   <div className="font-semibold text-sm">{project.stats.clients}</div>
@@ -2197,7 +2198,7 @@ const OurWork = () => {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
               {[
-                { value: "26+", label: "Projects Completed", color: "teal", icon: <Code className="w-5 h-5 md:w-6 md:h-6" /> },
+                { value: "50+", label: "Projects Completed", color: "teal", icon: <Code className="w-5 h-5 md:w-6 md:h-6" /> },
                 { value: statsValues.satisfaction, label: "Client Satisfaction", color: "green", icon: <Award className="w-5 h-5 md:w-6 md:h-6" /> },
                 { value: statsValues.technologies, label: "Technologies Used", color: "blue", icon: <Cpu className="w-5 h-5 md:w-6 md:h-6" /> },
                 { value: "10K+", label: "Users Served", color: "purple", icon: <Users className="w-5 h-5 md:w-6 md:h-6" /> }

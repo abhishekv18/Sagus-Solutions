@@ -625,7 +625,7 @@ const DiscountPopup = () => {
               <div className="flex justify-between text-xs text-slate-500 mb-1">
                 <span className="flex items-center">
                   <Users className="w-3 h-3 mr-1" />
-                  {10 - spotsLeft}/10 claimed
+                3/10 claimed
                 </span>
                 <span className="flex items-center">
                   <Star className="w-3 h-3 mr-0.5 text-yellow-500 fill-current" />
@@ -635,7 +635,7 @@ const DiscountPopup = () => {
               <div className="w-full bg-slate-200 rounded-full h-1.5">
                 <div
                   className="bg-gradient-to-r from-teal-500 to-green-500 h-1.5 rounded-full transition-all duration-500"
-                  style={{ width: `${progressWidth}%` }}
+                  style={{ width: `${30}%` }}
                 ></div>
               </div>
             </div>
@@ -666,7 +666,7 @@ const DiscountPopup = () => {
                     <Star key={i} className="w-3 h-3 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <span className="ml-1">20+ happy clients</span>
+                <span className="ml-1">45+ happy clients</span>
               </div>
             </div>
           </div>
