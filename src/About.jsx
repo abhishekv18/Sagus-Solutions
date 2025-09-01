@@ -664,13 +664,6 @@ const About = () => {
       image: "/WhatsApp Image 2025-08-24 at 00.44.42_92c0c5a0.jpg",
       expertise: "Digital Marketing & Analytics",
       bio: "Data-driven marketing strategies that deliver results"
-    },
-    {
-      name: "Rohit Kumar",
-      role: "Certified Business Analyst",
-      image: "/WhatsApp Image 2025-08-28 at 23.17.07_cc9e3ad9.jpg", // Replace with actual image
-      expertise: "Client Relations & Business Analysis",
-      bio: "5+ years of experience in client handling and business analysis"
     }
   ];
   const values = [
@@ -969,7 +962,7 @@ const About = () => {
             </div>
 
             {/* Next four members in grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 lg:gap-10 justify-items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 lg:gap-10 justify-items-center">
               {teamMembers.slice(1).map((member, index) => (
                 <div key={index} className="group text-center">
                   <div className="relative mb-4 md:mb-6 mx-auto w-fit">
